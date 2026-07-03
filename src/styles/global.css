@@ -1,0 +1,47 @@
+@import "tailwindcss";
+
+/*
+ * Fluid rem: CSS fallback + скрипт в Layout.astro.
+ * Брейкпоинт md переключает --artboard; скрипт только считает font-size.
+ */
+
+@theme {
+  /* Единственный брейкпоинт */
+  --breakpoint-*: initial;
+  --breakpoint-md: 992px;
+  --container-*: initial;
+
+  /* Ширина макета в design units (используется в calc для html font-size) */
+  --artboard-mobile: 360;
+  --artboard-desktop: 1440;
+
+  /* 1 spacing step = 1 design rem (px-14 → 14rem → 14 design units) */
+  --spacing: 1rem;
+
+  /* Typography in design rem units (body default is 14rem in @layer base) */
+  --text-xs: 12rem;
+  --text-xs--line-height: 1.4;
+  --text-sm: 13rem;
+  --text-sm--line-height: 1.45;
+  --text-base: 14rem;
+  --text-base--line-height: 1.5;
+  --text-lg: 16rem;
+  --text-lg--line-height: 1.5;
+  --text-xl: 18rem;
+  --text-xl--line-height: 1.45;
+  --text-2xl: 22rem;
+  --text-2xl--line-height: 1.35;
+  --text-3xl: 28rem;
+  --text-3xl--line-height: 1.25;
+  --text-4xl: 36rem;
+  --text-4xl--line-height: 1.2;
+
+  /* Hairline borders stay visible when 1rem becomes sub-pixel on desktop */
+  --default-border-width: 1px;
+  --default-ring-width: 1px;
+}
+
+
+@utility container {
+  @apply mx-auto w-full max-w-[360rem] px-3 md:max-w-[1240rem];
+}
