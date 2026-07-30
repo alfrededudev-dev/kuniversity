@@ -5,7 +5,7 @@ import { SEO } from "astro-seo";
 interface Props {
 	title?: string;
 
-	seoTitle: string;
+	seoTitle?: string;
   	seoDescription?: string;
   	seoKeywords?: string[];
 
@@ -14,13 +14,13 @@ interface Props {
 	children: any;
 }
 
-const { 
-  seoTitle, 
+const {
+  seoTitle,
   seoDescription = "Сайт создан с помощью современного шаблона Astro",
   seoKeywords = [],
   ogImage = "/default-og-image.jpg",
   noIndex = false,
-  children 
+  children
 } = Astro.props;
 
 const keywordsString = seoKeywords.join(', ');
@@ -43,7 +43,7 @@ const pageTitle = title ?? "Site";
 			title={title}
 			description={seoDescription}
 			noindex={noIndex}
-			
+
 			extend={{
 				meta: [
 				...(seoKeywords.length > 0 ? [
