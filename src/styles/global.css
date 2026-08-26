@@ -1,7 +1,7 @@
 @import "tailwindcss";
 
 /*
- * Fluid rem: CSS fallback + скрипт в Layout.astro.
+ * Fluid rem: CSS fallback + optional layout script.
  * Брейкпоинт md переключает --artboard; скрипт только считает font-size.
  */
 
