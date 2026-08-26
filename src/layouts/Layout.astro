@@ -58,10 +58,14 @@ const pageTitle = title ?? "Site";
 		/>
 		<link rel="sitemap" href="/sitemap-index.xml" />
 		<script>
-			const setHtmlFontSize = (width: number) => document.documentElement.style.fontSize = `${1 * window.innerWidth / width}px`
-			const updateHtmlFontSize = () => window.innerWidth >= 992 ? setHtmlFontSize(1440) : setHtmlFontSize(360)
+			const setHtmlFontSize = (width: number) => {
+				document.documentElement.style.fontSize =
+					1 * window.innerWidth / width + "px";
+			};
+			const updateHtmlFontSize = () =>
+				window.innerWidth >= 992 ? setHtmlFontSize(1440) : setHtmlFontSize(360);
 			updateHtmlFontSize();
-			window.addEventListener('resize', updateHtmlFontSize);
+			window.addEventListener("resize", updateHtmlFontSize);
 		</script>
 	</head>
 	<body>
