@@ -100,8 +100,7 @@ const schools = [
       {schools.map((school) => (
         <a href={school.href} class="hover:text-primary transition-colors duration-500 group">
           <div class="offer-item w-[180rem] max-md:w-[138rem] rounded-[90rem] border-[2rem] border-primary/5 p-[14rem_14rem_5rem_14rem] max-md:p-[10rem_10rem_5rem_10rem] text-center transition-color transition-transform duration-500 hover:scale-110">
-            <div class="offer-item__icon text-accent relative mx-auto mb-[50rem] flex h-[152rem] w-[152rem] max-md:mb-[27rem] max-md:h-[116rem] max-md:w-[116rem] items-center justify-center rounded-full border-[5rem] border-primary/5 group-hover:text-primary">
-              <Fragment set:html={school.svg} />
+<div class="offer-item__icon text-accent relative mx-auto mb-[50rem] flex h-[152rem] w-[152rem] max-md:mb-[27rem] max-md:h-[116rem] max-md:w-[116rem] items-center justify-center rounded-full border-[5rem] border-primary/5 group-hover:text-primary [&_svg]:h-[72rem] [&_svg]:w-[72rem] max-md:[&_svg]:h-[55rem] max-md:[&_svg]:w-[55rem]">              <Fragment set:html={school.svg} />
               <div class="offer-item__icon-line absolute bottom-[-24rem] h-[2rem] w-[72rem] bg-accent max-md:bottom-[-18rem] max-md:w-[55rem]"></div>
               <div class="offer-item__icon-line-short absolute bottom-[-20rem] h-[2rem] w-[50rem] bg-accent max-md:bottom-[-14rem] max-md:w-[38rem]"></div>
             </div>
