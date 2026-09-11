@@ -1,0 +1,127 @@
+---
+// src/components/sections/HeroSlider.astro
+import Button from '../ui/Button.astro';
+
+const slides = [
+  {
+    id: 1,
+    title: "ADMISSIONS",
+    subtitle: "ARE OPEN",
+    tag: "Intake 2024-2025 👩‍🎓",
+    description: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
+    image: "/portrait-perfect-student-university.png",
+    buttons: [
+      { text: "Online Campus", variant: "primary-bordered" as const },
+      { text: "Distance learning", variant: "accent-bordered" as const }
+    ]
+  },
+  {
+    id: 2,
+    title: "ADMISSIONS",
+    subtitle: "ARE OPEN",
+    tag: "Intake 2024-2025 👩‍🎓",
+    description: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
+    image: "/Depositphotos_122104490_S.jpg",
+    buttons: [
+      { text: "Online Campus", variant: "primary-bordered" as const },
+      { text: "Distance learning", variant: "accent-bordered" as const }
+    ]
+  },
+  {
+    id: 3,
+    title: "ADMISSIONS",
+    subtitle: "ARE OPEN",
+    tag: "Intake 2024-2025 👩‍🎓",
+    description: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
+    image: "/portrait-perfect-student-university.png",
+    buttons: [
+      { text: "Online Campus", variant: "primary-bordered" as const },
+      { text: "Distance learning", variant: "accent-bordered" as const }
+    ]
+  },
+  {
+    id: 4,
+    title: "ADMISSIONS",
+    subtitle: "ARE OPEN",
+    tag: "Intake 2024-2025 👩‍🎓",
+    description: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
+    image: "/Depositphotos_122104490_S.jpg",
+    buttons: [
+      { text: "Online Campus", variant: "primary-bordered" as const },
+      { text: "Distance learning", variant: "accent-bordered" as const }
+    ]
+  },
+];
+
+const stats = [
+  { amount: "25k", title: "library resource" },
+  { amount: "+15400", title: "our graduates" },
+  { amount: "+200", title: "teaching staff" }
+];
+---
+
+<section class="relative h-[628rem] max-md:h-[337rem] max-md:mb-[180rem]">
+  <div class="container relative h-full">
+    <div class="relative h-full">
+      <div class="absolute top-[50rem] left-[70rem] z-[100] h-[94rem] w-[68rem] bg-[url('/decoration.svg')] bg-cover max-md:top-[180rem] max-md:left-[-10rem] max-md:h-[60rem] max-md:w-[27rem] max-md:bg-cover"></div>
+      
+      {slides.map((slide, index) => (
+        <div 
+          class:list={[
+            'absolute h-full w-full transition-opacity duration-1500',
+            index === 0 ? 'visible opacity-100' : 'invisible opacity-0'
+          ]}
+          data-hslide-index={index}
+        >
+          <div class="relative h-full pl-[249rem] max-md:pl-[48rem]">
+            <div class="relative">
+              <img 
+                src={slide.image} 
+                alt="Hero slide" 
+                class="h-[628rem] w-full rounded-[2rem] object-cover max-md:h-[337rem] max-md:w-[281rem]"
+              />
+              <div class="absolute -left-[16rem] -bottom-[13rem] -z-10 block h-[100rem] w-[100rem] rounded-[1.08rem] border-[4rem] border-primary/25"></div>
+            </div>
+            
+            <div class="absolute top-[90rem] left-0 z-[99] w-[457rem] rounded-[2rem] bg-white/86 p-[59rem_60rem_67rem_0] backdrop-blur-[16rem] max-md:bottom-[-164rem] max-md:left-[-32rem] max-md:top-[220rem] max-md:w-[320rem] max-md:p-[27rem_10rem_27rem_40rem]">
+              <h1 class="mb-[20rem] text-[58rem] font-bold uppercase leading-[58rem] tracking-[2.918rem] max-md:mb-[0rem] max-md:text-[36rem] max-md:leading-normal">{slide.title}</h1>
+              <h2 class="mb-[20rem] text-[58rem] font-normal uppercase leading-[58rem] tracking-[2.918rem] max-md:mb-[10rem] max-md:mt-[5rem] max-md:text-[36rem] max-md:leading-normal">{slide.subtitle}</h2>
+              <h3 class="text-[36rem] font-normal uppercase leading-[36rem] tracking-[1.44rem] max-md:text-[24rem] max-md:leading-normal">{slide.tag}</h3>
+              <p class="mt-[25rem] leading-[18rem] max-md:mt-[15rem] max-md:leading-[13rem]">{slide.description}</p>
+              
+              <div class="mt-[35rem] flex items-center gap-[40rem] max-md:mt-[25rem] max-md:gap-[25rem]">
+                {slide.buttons.map((btn) => (
+                  <Button href="#" variant={btn.variant}>{btn.text}</Button>
+                ))}
+              </div>
+            </div>
+          </div>
+        </div>
+      ))}
+    </div>
+
+    <div class="absolute -right-[10rem] bottom-[-10rem] flex h-[108rem] items-center justify-between rounded-[2rem] bg-[#F1F1F1]/24 px-0 py-[14rem] backdrop-blur-[11rem] max-md:bottom-[130rem] max-md:left-[40rem] max-md:right-auto max-md:h-[46rem]">
+      {stats.map((stat) => (
+        <div class="w-[140rem] border-r-[1.6rem] border-white text-center font-bold uppercase text-white last:border-none [text-shadow:0_2rem_4rem_rgba(0,0,0,0.1)] max-md:w-[68rem] ">
+          <div class="text-[35rem] leading-[39rem] tracking-[1.75rem] max-md:text-[15rem]">{stat.amount}</div>
+          <div class="mb-[10rem] text-[15rem] font-bold leading-[15rem] tracking-[0.75rem] max-md:mb-0 max-md:text-[6.5rem]">{stat.title}</div>
+        </div>
+      ))}
+    </div>
+  </div>
+
+  <div class="absolute right-[13rem] top-1/2 -translate-y-1/2 max-md:left-[6rem] max-md:right-auto max-md:top-[20rem] max-md:translate-y-0 max-md:scale-x-[-1]">
+    {slides.map((slide, index) => (
+      <div 
+        class:list={[
+          'cursor-pointer border-r-[2rem] border-accent py-[14rem] pr-[15rem] text-right font-bold transition-opacity duration-500',
+          index === 0 ? 'opacity-100' : 'opacity-20',
+          'max-md:py-[8rem] max-md:pr-[8rem]'
+        ]}
+        data-hdot-index={index}
+      >
+        <span class="inline-block max-md:scale-x-[-1] max-md:text-[11.47rem]">{index + 1}</span>
+      </div>
+    ))}
+  </div>
+</section>

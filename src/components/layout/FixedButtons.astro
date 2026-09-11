@@ -1,0 +1,78 @@
+---
+// src/components/layout/FixedButtons.astro
+---
+
+<div class="fixed-buttons fixed right-0 bottom-[80rem] z-[999]">
+  <!-- Apply Online (mobile only) -->
+  <a href="#">
+    <div class="fixed-buttons-item fixed-buttons-item--text hidden max-md:flex bg-accent rounded-[16rem_0_0_16rem] h-[32rem] max-md:h-[32rem] w-[54rem] max-md:w-[40rem] mb-[14rem] items-center pl-[8rem] hover:cursor-pointer">
+      <span class="text-[5rem] text-white w-[14rem]">Apply Online</span>
+      <div class="h-[20rem] w-[1.6rem] bg-white ml-[8rem] rounded-[1.6rem] flex-shrink-0"></div>
+    </div>
+  </a>
+
+  <!-- WhatsApp / Chat -->
+  <a href="#">
+    <div class="fixed-buttons-item bg-primary rounded-[16rem_0_0_16rem] h-[32rem] max-md:h-[32rem] w-[54rem] max-md:w-[40rem] mb-[14rem] flex items-center pl-[8rem] hover:cursor-pointer">
+      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none" class="flex-shrink-0">
+        <g clip-path="url(#clip0_153_2237)">
+          <mask id="mask0_153_2237" style="mask-type:luminance" maskUnits="userSpaceOnUse" x="0" y="0" width="16" height="16">
+            <path d="M0 0H16V16H0V0Z" fill="white"/>
+          </mask>
+          <g mask="url(#mask0_153_2237)">
+            <path fill-rule="evenodd" clip-rule="evenodd" d="M11.61 9.58802C11.4113 9.48869 10.4373 9.01002 10.256 8.94335C10.0747 8.87669 9.94267 8.84469 9.81 9.04335C9.678 9.24135 9.29867 9.68736 9.18333 9.81936C9.06733 9.95202 8.952 9.96802 8.754 9.86936C8.556 9.76935 7.91733 9.56069 7.16067 8.88602C6.572 8.36069 6.174 7.71202 6.05867 7.51336C5.94333 7.31536 6.046 7.20802 6.14533 7.10935C6.23467 7.02069 6.34333 6.87802 6.44267 6.76269C6.542 6.64736 6.57467 6.56402 6.64067 6.43136C6.70733 6.29936 6.674 6.18402 6.624 6.08469C6.57467 5.98535 6.17867 5.01002 6.01333 4.61336C5.85267 4.22736 5.68933 4.28002 5.568 4.27336C5.452 4.26802 5.32 4.26669 5.188 4.26669C5.056 4.26669 4.84133 4.31602 4.66 4.51469C4.478 4.71269 3.96667 5.19202 3.96667 6.16736C3.96667 7.14202 4.676 8.08402 4.77533 8.21669C4.87467 8.34935 6.172 10.35 8.15933 11.208C8.63267 11.412 9.00133 11.534 9.28867 11.6247C9.76333 11.776 10.1953 11.7547 10.5367 11.7034C10.9167 11.6467 11.7087 11.224 11.874 10.7614C12.0393 10.2987 12.0387 9.90202 11.9893 9.81936C11.94 9.73669 11.808 9.68736 11.6093 9.58802M7.99467 14.5234H7.992C6.81162 14.5236 5.65291 14.2063 4.63733 13.6047L4.39733 13.462L1.90267 14.1167L2.56867 11.6847L2.412 11.4354C1.75206 10.3849 1.40283 9.16921 1.40467 7.92869C1.406 4.29536 4.362 1.33936 7.99733 1.33936C8.86318 1.33672 9.72092 1.50623 10.5207 1.83801C11.3204 2.1698 12.0463 2.65725 12.656 3.27202C13.2697 3.88289 13.756 4.60941 14.087 5.40954C14.4179 6.20967 14.5869 7.06749 14.584 7.93335C14.5827 11.5667 11.6267 14.5234 7.99467 14.5234ZM13.6027 2.32536C12.8681 1.5862 11.9942 1.00009 11.0316 0.600942C10.069 0.201797 9.03675 -0.0024502 7.99467 2.21799e-05C3.62533 2.21799e-05 0.068 3.55669 0.0666667 7.92802C0.064516 9.3192 0.429466 10.6863 1.12467 11.8914L0 16L4.20267 14.8974C5.36545 15.5303 6.66813 15.8621 7.992 15.8627H7.99533C12.3647 15.8627 15.922 12.306 15.9233 7.93402C15.9266 6.8922 15.7232 5.86007 15.325 4.89736C14.9268 3.93464 14.3416 3.06045 13.6033 2.32536" fill="white"/>
+          </g>
+        </g>
+        <defs>
+          <clipPath id="clip0_153_2237">
+            <rect width="16" height="16" fill="white"/>
+          </clipPath>
+        </defs>
+      </svg>
+      <div class="h-[20rem] w-[1.6rem] bg-white ml-[8rem] rounded-[1.6rem] flex-shrink-0"></div>
+    </div>
+  </a>
+
+  <!-- To Top Button -->
+  <button
+    type="button"
+    class="fixed-buttons-item fixed-buttons-item__to-top-button bg-primary rounded-[16rem_0_0_16rem] h-[32rem] max-md:h-[32rem] w-[54rem] max-md:w-[40rem] flex items-center pl-[8rem] cursor-pointer opacity-25 pointer-events-none transition-opacity duration-500"
+    id="toTopButton"
+    aria-label="Scroll to top"
+  >
+    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none" class="flex-shrink-0">
+      <path d="M1.29672 10.896C1.49427 11.0935 1.76217 11.2045 2.0415 11.2045C2.32084 11.2045 2.58874 11.0935 2.78629 10.896L8.00086 5.68147L13.2154 10.896C13.4141 11.0879 13.6802 11.1941 13.9564 11.1917C14.2326 11.1893 14.4969 11.0785 14.6922 10.8832C14.8875 10.6879 14.9983 10.4237 15.0007 10.1475C15.0031 9.87125 14.8969 9.60514 14.705 9.40646L8.74565 3.44711C8.5481 3.24962 8.2802 3.13867 8.00086 3.13867C7.72152 3.13867 7.45362 3.24962 7.25607 3.44711L1.29672 9.40646C1.09923 9.60401 0.988281 9.87191 0.988281 10.1512C0.988281 10.4306 1.09923 10.6985 1.29672 10.896Z" fill="white"/>
+    </svg>
+    <div class="h-[20rem] w-[1.6rem] bg-white ml-[8rem] rounded-[1.6rem] flex-shrink-0"></div>
+  </button>
+</div>
+
+<script>
+  function initFixedButtons() {
+    const toTopButton = document.getElementById('toTopButton');
+    if (!toTopButton) return;
+
+    if (toTopButton.dataset.bound === 'true') return;
+    toTopButton.dataset.bound = 'true';
+
+    const setVisible = (visible: boolean): void => {
+      toTopButton.classList.toggle('opacity-25', !visible);
+      toTopButton.classList.toggle('pointer-events-none', !visible);
+    };
+
+    const onScroll = (): void => {
+      setVisible(window.scrollY > 300);
+    };
+
+    window.addEventListener('scroll', onScroll, { passive: true });
+
+    toTopButton.addEventListener('click', () => {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+
+    setVisible(window.scrollY > 300);
+  }
+
+  initFixedButtons();
+  document.addEventListener('astro:page-load', initFixedButtons);
+</script>

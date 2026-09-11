@@ -1,3 +1,4 @@
+/* src/styles/global.css */
 @import "tailwindcss";
 
 /*
@@ -5,20 +6,61 @@
  * Брейкпоинт md переключает --artboard; скрипт только считает font-size.
  */
 
+:root {
+  /* Основные цвета */
+  --color-primary: #004562;
+  --color-primary-dark: #012c3f;
+  --color-accent: #9b552e;
+  --color-white: #ffffff;
+  --color-black: #000000;
+
+  /* Прозрачные версии */
+  --color-primary-05: rgba(0, 69, 98, 0.05);
+  --color-primary-10: rgba(0, 69, 98, 0.1);
+  --color-primary-20: rgba(0, 69, 98, 0.2);
+  --color-primary-25: rgba(0, 69, 98, 0.25);
+  --color-primary-30: rgba(0, 69, 98, 0.3);
+  --color-primary-50: rgba(0, 69, 98, 0.5);
+  --color-primary-60: rgba(0, 69, 98, 0.6);
+
+  --color-accent-25: rgba(155, 85, 46, 0.25);
+  --color-accent-30: rgba(155, 85, 46, 0.3);
+
+  --color-white-24: rgba(241, 241, 241, 0.24);
+  --color-white-86: rgba(255, 255, 255, 0.86);
+
+  /* Цвета для состояний */
+  --color-error: #b10000;
+  --color-border: #dddddd;
+
+  /* Фоновые цвета */
+  --color-bg-light: rgba(248, 248, 248, 0.8);
+  --color-bg-mobile-menu: rgba(0, 69, 98, 0.07);
+}
+
 @theme {
+  /* Цвета */
+  --color-primary: #004562;
+  --color-primary-dark: #012c3f;
+  --color-accent: #9b552e;
+  --color-white: #ffffff;
+  --color-black: #000000;
+  --color-error: #b10000;
+  --color-border: #dddddd;
+
   /* Единственный брейкпоинт */
   --breakpoint-*: initial;
   --breakpoint-md: 992px;
   --container-*: initial;
 
-  /* Ширина макета в design units (используется в calc для html font-size) */
+  /* Ширина макета в design units */
   --artboard-mobile: 360;
   --artboard-desktop: 1440;
 
-  /* 1 spacing step = 1 design rem (px-14 → 14rem → 14 design units) */
+  /* 1 spacing step = 1 design rem */
   --spacing: 1rem;
 
-  /* Typography in design rem units (body default is 14rem in @layer base) */
+  /* Typography in design rem units */
   --text-xs: 12rem;
   --text-xs--line-height: 1.4;
   --text-sm: 13rem;
@@ -36,12 +78,115 @@
   --text-4xl: 36rem;
   --text-4xl--line-height: 1.2;
 
-  /* Hairline borders stay visible when 1rem becomes sub-pixel on desktop */
   --default-border-width: 1px;
   --default-ring-width: 1px;
 }
 
-
 @utility container {
-  @apply mx-auto w-full max-w-[360rem] px-3 md:max-w-[1240rem];
+  @apply mx-auto w-full max-w-[320rem] px-3 md:max-w-[1256rem];
+}
+
+/* Custom Fonts */
+@font-face {
+  font-family: "Times";
+  font-weight: 400;
+  font-style: normal;
+  src: url("/fonts/Times/times.ttf") format("truetype");
+}
+@font-face {
+  font-family: "Times";
+  font-weight: 400;
+  font-style: italic;
+  src: url("/fonts/Times/timesItalic.ttf") format("truetype");
+}
+@font-face {
+  font-family: "Times";
+  font-weight: 700;
+  font-style: normal;
+  src: url("/fonts/Times/timesBold.ttf") format("truetype");
+}
+@font-face {
+  font-family: "Times";
+  font-weight: 700;
+  font-style: italic;
+  src: url("/fonts/Times/timesBoldItalic.ttf") format("truetype");
+}
+
+/* Base Styles */
+* {
+  box-sizing: border-box;
+  /* transition: all 0s ease !important; */
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-size: 15rem;
+  font-family: "Times", serif;
+  font-style: normal;
+  font-weight: 400;
+  color: var(--color-primary);
+}
+
+@media (max-width: 992px) {
+  body {
+    font-size: 12rem;
+  }
+}
+
+ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+svg path {
+  transition: all 0.5s linear;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+a {
+  /* transform: scaleX(1.1);
+  scale-x-110 */
+}
+
+p,
+li {
+  line-height: 18rem;
+}
+@media (max-width: 992px) {
+  p,
+  li {
+    line-height: 13.8rem;
+  }
+}
+
+input {
+  font-family: "Times", serif;
+  font-style: normal;
+  font-weight: 400;
+}
+input:focus {
+  outline: none;
+}
+input::placeholder {
+  font-family: "Times", serif;
+  font-style: normal;
+  font-weight: 400;
+}
+
+/* Dark Background - используется в HeaderTop и Footer */
+.dark-background {
+  background-color: var(--color-primary);
+  color: var(--color-white);
+}
+.dark-background a {
+  color: var(--color-white);
+}
+.dark-background a:hover {
+  color: var(--color-accent);
 }

@@ -1,0 +1,63 @@
+---
+// src/components/sections/News.astro
+import SectionTitle from '../ui/SectionTitle.astro';
+
+const newsItems = [
+  {
+    day: '15',
+    month: 'Oct.',
+    title: 'Open Day',
+    description: 'Studying at an international university provides the opportunity to meet people from different countries and cultures.',
+    link: '/news/open-day/'
+  },
+  {
+    day: '15',
+    month: 'Oct.',
+    title: 'Important guests',
+    description: 'Studying at an international university provides the opportunity to meet people from different countries and cultures.',
+    link: '/news/important-guests/'
+  },
+  {
+    day: '15',
+    month: 'Oct.',
+    title: 'Preparation for classes',
+    description: 'Studying at an international university provides the opportunity to meet people from different countries and cultures.',
+    link: '/news/preparation-for-classes/'
+  }
+];
+---
+
+<section class="news">
+  <div class="container">
+    <!-- Section Title -->
+    <SectionTitle supTitle="News" title="Following us" />
+
+    <!-- News Content -->
+    <div class="news__content mt-[32rem] flex justify-between gap-[20rem] pl-[24rem] max-md:mt-[18rem] max-md:flex-col max-md:gap-[20rem] max-md:pl-[19rem]">
+      {newsItems.map((item) => (
+        <div class="news-item flex items-start gap-[26rem] max-md:gap-[20rem] group">
+          <!-- Date -->
+          <div class="news-item__date flex h-[40rem] min-w-[40rem] items-center justify-center rounded-full border-[2rem] border-accent text-white">
+            <div class="news-item__date-content flex h-[36rem] w-[36rem] flex-col items-center justify-center rounded-full border-[2rem] border-white bg-white text-accent transition-colors duration-500 group-hover:bg-accent group-hover:text-white">
+              <div class="day text-[16rem] font-bold leading-[15rem] tracking-[-0.165rem]">{item.day}</div>
+              <div class="month text-[8rem] font-bold leading-[7rem] tracking-[-0.082rem]">{item.month}</div>
+            </div>
+          </div>
+
+          <!-- Content -->
+          <div class="news-item__content section-content mt-0 w-[290rem] max-md:w-[240rem]">
+            <h3 class="mb-[16rem] text-left text-[18rem] font-bold uppercase leading-[18rem] max-md:mb-[10rem] max-md:text-[14rem]">{item.title}</h3>
+            <div class="section-content__description">
+              <p class="mb-[20rem] inline text-justify text-[14rem] leading-[18rem] max-md:mb-[18rem] max-md:text-[12rem] max-md:leading-[13.8rem]">
+                {item.description}
+              </p>
+              <p class="inline">
+                <a href={item.link} class="font-bold italic text-accent/25 after:ml-[5rem] after:inline-block after:content-['→']">Read more</a>
+              </p>
+            </div>
+          </div>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>

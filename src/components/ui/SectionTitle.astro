@@ -1,0 +1,21 @@
+---
+// src/components/ui/SectionTitle.astro
+export interface Props {
+  supTitle?: string;
+  title: string;
+}
+
+const { supTitle, title } = Astro.props;
+---
+
+<div class="section-title">
+  {supTitle && (
+    <div class="flex items-center gap-[24rem] text-[18rem] font-bold uppercase text-accent max-md:gap-[8.66rem] max-md:text-[9rem]">
+      <span class="block h-[2rem] w-[72rem] bg-accent max-md:h-[1rem] max-md:w-[32rem]"></span>
+      {supTitle}
+    </div>
+  )}
+  <h2 class="mt-[10rem] text-[38rem] font-bold uppercase leading-[38rem] max-md:mt-[5rem] max-md:text-[18rem] max-md:leading-[21rem]">
+    {title}
+  </h2>
+</div>

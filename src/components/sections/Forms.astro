@@ -1,0 +1,84 @@
+---
+// src/components/sections/Forms.astro
+
+const formsItems = [
+  {
+    title: 'ON-Campus EDUCATION',
+    description: '<strong>We place special emphasis</strong> on developing academic programs that follow international standards and incorporate the best practices from global education. A key aspect of our approach is our participation in international initiatives such as the <strong>TEMPUS programs</strong> and <strong>the Visegrad Fund</strong>, allowing us to continually improve the quality of education and integrate the latest innovations into our system. Allowing us to continually improve the quality of education and integrate the latest innovations into our system.',
+    svg: `<svg width="55" height="55" viewBox="0 0 55 55" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <g clip-path="url(#clip-forms-1)">
+    <path d="M50.5645 38.3145H48.8418V35.1562C48.8418 34.3634 48.1991 33.7207 47.4062 33.7207C46.6134 33.7207 45.9707 34.3634 45.9707 35.1562V38.3145H44.0566V52H50.5645C51.3573 52 52 51.3573 52 50.5645V39.75C52 38.9572 51.3573 38.3145 50.5645 38.3145Z" fill="#9B552E"></path>
+    <path d="M10.9434 38.3145H9.0293V35.1562C9.0293 34.3634 8.38655 33.7207 7.59375 33.7207C6.80095 33.7207 6.1582 34.3634 6.1582 35.1562V38.3145H4.43555C3.64274 38.3145 3 38.9572 3 39.75V50.5645C3 51.3573 3.64274 52 4.43555 52H10.9434V38.3145Z" fill="#9B552E"></path>
+    <path d="M13.8145 52H20.7051V44.3438C20.7051 43.5509 21.3478 42.9082 22.1406 42.9082H32.8594C33.6522 42.9082 34.2949 43.5509 34.2949 44.3438V52H41.1855C41.1855 49.6269 41.1855 6.62648 41.1855 4.43555C41.1855 3.64274 40.5428 3 39.75 3H15.25C14.4572 3 13.8145 3.64274 13.8145 4.43555V52ZM23.6719 36.5918H22.1406C21.3478 36.5918 20.7051 35.9491 20.7051 35.1562C20.7051 34.3634 21.3478 33.7207 22.1406 33.7207H23.6719C24.4647 33.7207 25.1074 34.3634 25.1074 35.1562C25.1074 35.9491 24.4647 36.5918 23.6719 36.5918ZM23.6719 30.4668H22.1406C21.3478 30.4668 20.7051 29.8241 20.7051 29.0312C20.7051 28.2384 21.3478 27.5957 22.1406 27.5957H23.6719C24.4647 27.5957 25.1074 28.2384 25.1074 29.0312C25.1074 29.8241 24.4647 30.4668 23.6719 30.4668ZM23.6719 24.3418H22.1406C21.3478 24.3418 20.7051 23.6991 20.7051 22.9062C20.7051 22.1134 21.3478 21.4707 22.1406 21.4707H23.6719C24.4647 21.4707 25.1074 22.1134 25.1074 22.9062C25.1074 23.6991 24.4647 24.3418 23.6719 24.3418ZM23.6719 18.2168H22.1406C21.3478 18.2168 20.7051 17.5741 20.7051 16.7812C20.7051 15.9884 21.3478 15.3457 22.1406 15.3457H23.6719C24.4647 15.3457 25.1074 15.9884 25.1074 16.7812C25.1074 17.5741 24.4647 18.2168 23.6719 18.2168ZM32.8594 36.5918H31.3281C30.5353 36.5918 29.8926 35.9491 29.8926 35.1562C29.8926 34.3634 30.5353 33.7207 31.3281 33.7207H32.8594C33.6522 33.7207 34.2949 34.3634 34.2949 35.1562C34.2949 35.9491 33.6522 36.5918 32.8594 36.5918ZM32.8594 30.4668H31.3281C30.5353 30.4668 29.8926 29.8241 29.8926 29.0312C29.8926 28.2384 30.5353 27.5957 31.3281 27.5957H32.8594C33.6522 27.5957 34.2949 28.2384 34.2949 29.0312C34.2949 29.8241 33.6522 30.4668 32.8594 30.4668ZM32.8594 24.3418H31.3281C30.5353 24.3418 29.8926 23.6991 29.8926 22.9062C29.8926 22.1134 30.5353 21.4707 31.3281 21.4707H32.8594C33.6522 21.4707 34.2949 22.1134 34.2949 22.9062C34.2949 23.6991 33.6522 24.3418 32.8594 24.3418ZM32.8594 18.2168H31.3281C30.5353 18.2168 29.8926 17.5741 29.8926 16.7812C29.8926 15.9884 30.5353 15.3457 31.3281 15.3457H32.8594C33.6522 15.3457 34.2949 15.9884 34.2949 16.7812C34.2949 17.5741 33.6522 18.2168 32.8594 18.2168ZM21.375 9.2207H33.625C34.4178 9.2207 35.0605 9.86345 35.0605 10.6562C35.0605 11.4491 34.4178 12.0918 33.625 12.0918H21.375C20.5822 12.0918 19.9395 11.4491 19.9395 10.6562C19.9395 9.86345 20.5822 9.2207 21.375 9.2207Z" fill="#9B552E"></path>
+    <path d="M23.5762 52H31.4238V45.7793H23.5762V52Z" fill="#9B552E"></path>
+  </g>
+  <defs>
+    <clipPath id="clip-forms-1">
+      <rect width="49" height="49" fill="white" transform="translate(3 3)"></rect>
+    </clipPath>
+  </defs>
+</svg>`
+  },
+  {
+    title: 'ON-Campus EDUCATION',
+    description: '<strong>We place special emphasis</strong> on developing academic programs that follow international standards and incorporate the best practices from global education. A key aspect of our approach is our participation in international initiatives such as the <strong>TEMPUS programs</strong> and <strong>the Visegrad Fund</strong>, allowing us to continually improve the quality of education and integrate the latest innovations into our system. Allowing us to continually improve the quality of education and integrate the latest innovations into our system.',
+    svg: `<svg width="55" height="55" viewBox="0 0 55 55" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <g clip-path="url(#clip-forms-2)">
+    <path d="M4 41.8782C4 43.4315 5.25916 44.6907 6.8125 44.6907H23.857V46.2874C23.857 47.889 22.5587 49.1875 20.9569 49.1875H14.8283V52H41.1733V49.1875H34.9931C33.3915 49.1875 32.093 47.8891 32.093 46.2874V44.6907H49.1875C50.7408 44.6907 52 43.4315 52 41.8782V40.2969H4L4 41.8782Z" fill="#9B552E"></path>
+    <path d="M23.1723 4.07404L17.4116 9.83469H23.1723V4.07404Z" fill="#9B552E"></path>
+    <path d="M38.6643 4H25.9846V12.6472H17.3374V32.1531H38.6642V4L38.6643 4ZM34.3144 24.7161H21.6875V21.9036H34.3144V24.7161ZM34.3144 18.916H21.6875V16.1035H34.3144V18.916Z" fill="#9B552E"></path>
+    <path d="M49.1875 9.80005H41.4767V34.9655H14.5248V9.80005H6.8125C5.25916 9.80005 4 11.0592 4 12.6125V37.4843H52V12.6125C52 11.0593 50.7408 9.80005 49.1875 9.80005Z" fill="#9B552E"></path>
+  </g>
+  <defs>
+    <clipPath id="clip-forms-2">
+      <rect width="48" height="48" fill="white" transform="translate(4 4)"></rect>
+    </clipPath>
+  </defs>
+</svg>`
+  }
+];
+---
+
+<section class="forms">
+  <div class="container">
+    <div class="forms__content flex flex-col md:flex-row items-start justify-between gap-[28rem] max-md:gap-[18rem]">
+      <!-- Image -->
+      <div class="section-image section-image--left relative w-full md:w-[407rem] flex-shrink-0">
+        <img
+          src="/forms.png"
+          alt="forms"
+          class="w-full h-auto md:h-[450rem] md:w-[407rem] object-cover rounded-none"
+        />
+      </div>
+
+      <!-- Content -->
+      <div class="forms__info section-content flex-1 mt-0 md:mt-0">
+        <h2 class="mb-[16rem] text-[38rem] font-bold uppercase leading-[44rem] max-md:mb-[10rem] max-md:text-center max-md:text-[18rem] max-md:leading-[21rem] max-md:mt-0">
+          our students have the opportunity to choose the form of study
+        </h2>
+
+        <div class="forms__info__description section-content__description">
+          <p class="mb-0 text-justify leading-[18rem]">
+            Kyiv University is a <strong>modern educational institution</strong> that provides high-quality higher education. The university enjoys a well-deserved reputation as one of the leading universities not only in <strong>Ukraine</strong>.
+          </p>
+        </div>
+
+        <div class="forms__list mt-[24rem]">
+          {formsItems.map((item) => (
+            <div class="forms-item mt-[24rem] flex items-start gap-[27rem] pl-[15rem] first:mt-0">
+              <div class="forms-item__icon flex-shrink-0">
+                <div class="h-[55rem] w-[55rem] [&>svg]:block [&>svg]:h-full [&>svg]:w-full">
+                  <Fragment set:html={item.svg} />
+                </div>
+              </div>
+              <div class="forms-item__content">
+                <h3 class="mb-[16rem] text-[18rem] font-bold uppercase leading-[18rem] max-md:mb-[10rem] max-md:text-left max-md:text-[14rem]">{item.title}</h3>
+                <p class="text-justify leading-[17rem]" set:html={item.description}></p>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

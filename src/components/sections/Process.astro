@@ -1,0 +1,115 @@
+---
+// src/components/sections/Process.astro
+
+const steps = [
+  {
+    number: '01',
+    title: 'Program Selection',
+    description: 'Choose the program and field of study that interests you by exploring the options available on the university\'s website.',
+    icon: 'selection',
+    svg: `<svg width="32rem" height="32rem" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <g clip-path="url(#clip-selection)">
+    <path d="M8.53316 6.93344V4.80015C8.53316 4.50563 8.29437 4.26683 7.99984 4.26683H0.533323C0.238797 4.26683 0 4.50563 0 4.80015V6.93344H8.53316Z" fill="#9B552E"></path>
+    <path d="M0 8V25.5996H8.53316V8H0ZM6.39987 14.9332H2.13329C1.83877 14.9332 1.59997 14.6944 1.59997 14.3999V10.1333C1.59997 9.83877 1.83877 9.59997 2.13329 9.59997H6.39987C6.6944 9.59997 6.9332 9.83877 6.9332 10.1333V14.3999C6.9332 14.6944 6.6944 14.9332 6.39987 14.9332Z" fill="#9B552E"></path>
+    <path d="M0 28.8005V31.4671C0 31.7616 0.238797 32.0004 0.533323 32.0004H7.99984C8.29437 32.0004 8.53316 31.7616 8.53316 31.4671V28.8005H0Z" fill="#9B552E"></path>
+    <path d="M0 26.6671H8.53316V27.7337H0V26.6671Z" fill="#9B552E"></path>
+    <path d="M9.60107 26.6671H16.5343V27.7337H9.60107V26.6671Z" fill="#9B552E"></path>
+    <path d="M16.5343 2.13329V0.533323C16.5343 0.238797 16.2955 0 16.0009 0H10.1344C9.83987 0 9.60107 0.238797 9.60107 0.533323V2.13329H16.5343Z" fill="#9B552E"></path>
+    <path d="M9.60107 5.86658H16.5343V25.5995H9.60107V5.86658Z" fill="#9B552E"></path>
+    <path d="M9.60107 28.8005V31.4671C9.60107 31.7616 9.83987 32.0004 10.1344 32.0004H16.0009C16.2955 32.0004 16.5343 31.7616 16.5343 31.4671V28.8005H9.60107Z" fill="#9B552E"></path>
+    <path d="M9.60107 3.20072H16.5343V4.80069H9.60107V3.20072Z" fill="#9B552E"></path>
+    <path d="M26.2613 9.24848L26.2947 9.37637L18.2289 11.5272L18.1956 11.3994L26.2613 9.24848Z" stroke="#9B552E"></path>
+    <path d="M29.8568 25.0113L22.7572 26.9045L22.6901 26.6473L29.7897 24.7541L29.8568 25.0113Z" stroke="#9B552E" stroke-width="2"></path>
+    <path d="M21.5591 24.2922L18.7509 13.5268L26.8171 11.3759L29.6253 22.1413L21.5591 24.2922Z" stroke="#9B552E"></path>
+    <path d="M25.739 7.24879L17.6735 9.39946L17.0324 6.94277C17.0278 6.92356 17.0391 6.90411 17.0582 6.89852C17.0584 6.89845 17.0586 6.89839 17.0588 6.89833L25.0484 4.7678C25.0708 4.76336 25.0933 4.77647 25.1003 4.79861L25.739 7.24879Z" stroke="#9B552E"></path>
+    <path d="M23.4583 31.4981L23.4584 31.498L23.4479 31.492C23.4403 31.4876 23.4344 31.4803 23.4317 31.4713L22.9219 29.5171L30.988 27.3662L31.4988 29.3236C31.4989 29.3238 31.4989 29.324 31.499 29.3242C31.5035 29.3437 31.492 29.3632 31.4732 29.3687C31.4729 29.3688 31.4727 29.3689 31.4725 29.3689L23.4873 31.4983C23.4796 31.4998 23.4724 31.5004 23.4661 31.5004C23.4636 31.5004 23.4609 31.4997 23.4583 31.4981Z" stroke="#9B552E"></path>
+  </g>
+  <defs>
+    <clipPath id="clip-selection">
+      <rect width="32rem" height="32rem" fill="white"></rect>
+    </clipPath>
+  </defs>
+</svg>`
+  },
+  {
+    number: '02',
+    title: 'Document Submission',
+    description: 'Gather all required documents, such as your diploma, transcripts, recommendation letters, and application form.',
+    icon: 'document',
+    svg: `<svg width="36rem" height="36rem" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <g clip-path="url(#clip-document)">
+    <path d="M7.39493 36H21.1521C24.0841 36 25.4727 34.5124 25.4727 31.5514V28.9305H28.2357C31.1543 28.9305 32.6136 27.4429 32.6136 24.4819V4.44857C32.6136 1.48757 31.1543 0 28.2357 0H14.5493C11.6307 0 10.1579 1.48757 10.1579 4.44857V7.0695H7.39493C4.47636 7.0695 3.00293 8.55707 3.00293 11.5181V31.5514C3.00293 34.5266 4.47636 36 7.39493 36ZM17.9359 5.00143C17.3123 5.00143 17.0294 4.59 17.0294 4.16571V3.86743C17.0294 3.42836 17.3123 3.03171 17.9359 3.03171H24.8498C25.4586 3.03171 25.7562 3.42836 25.7562 3.86743V4.16507C25.7562 4.59064 25.4586 5.00079 24.8498 5.00079L17.9359 5.00143ZM7.50872 33.7191C6.04943 33.7191 5.28443 32.9259 5.28443 31.509V11.5457C5.28443 10.1571 6.04943 9.35036 7.52221 9.35036H12.4388V17.5674C12.4388 19.3526 13.3452 20.2307 15.1021 20.2307H23.1919V31.5084C23.1919 32.9252 22.4269 33.7185 20.9534 33.7185L7.50872 33.7191ZM15.3709 18.0919C14.8051 18.0919 14.5782 17.8656 14.5782 17.3128V9.79071L22.7528 18.0926L15.3709 18.0919Z" fill="#9B552E"></path>
+    <path d="M17.7297 29.3042L16.408 27.9875C16.6483 27.5087 16.8085 26.9501 16.8085 26.3915C16.8085 24.5162 15.2866 23 13.4043 23C11.5219 23 10 24.5162 10 26.3915C10 28.2668 11.5219 29.783 13.4043 29.783C13.965 29.783 14.5257 29.6234 15.0063 29.384L16.3279 30.7007C16.7284 31.0998 17.3292 31.0998 17.7297 30.7007C18.0901 30.3017 18.0901 29.7032 17.7297 29.3042ZM13.4043 28.985C11.9625 28.985 10.801 27.8279 10.801 26.3915C10.801 24.9551 11.9625 23.798 13.4043 23.798C14.8461 23.798 16.0075 24.9551 16.0075 26.3915C16.0075 27.8279 14.8461 28.985 13.4043 28.985Z" fill="#9B552E"></path>
+  </g>
+  <defs>
+    <clipPath id="clip-document">
+      <rect width="36rem" height="36rem" fill="white"></rect>
+    </clipPath>
+  </defs>
+</svg>`
+  },
+  {
+    number: '03',
+    title: 'final stage',
+    description: 'Complete any required entrance exams or interviews as required. Then pay the tuition fee and received an acceptance notification.',
+    icon: 'final',
+    svg: `<svg width="40rem" height="40rem" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <path d="M16.5 15.275L14.5312 20H18.4688L16.5 15.275Z" fill="#9B552E"></path>
+  <path fill-rule="evenodd" clip-rule="evenodd" d="M32.25 12.125L23.5 2.5H11.25C10.3217 2.5 9.4315 2.86875 8.77513 3.52513C8.11875 4.1815 7.75 5.07174 7.75 6V34C7.75 34.9283 8.11875 35.8185 8.77513 36.4749C9.4315 37.1312 10.3217 37.5 11.25 37.5H28.75C29.6783 37.5 30.5685 37.1312 31.2249 36.4749C31.8813 35.8185 32.25 34.9283 32.25 34V12.125ZM16.5 12.125C16.6727 12.125 16.8415 12.1761 16.9853 12.2718C17.129 12.3676 17.2411 12.5037 17.3076 12.6631L21.6826 23.1631C21.772 23.3773 21.7726 23.6182 21.6843 23.8329C21.596 24.0475 21.4261 24.2183 21.2119 24.3076C20.9977 24.397 20.7568 24.3976 20.5421 24.3093C20.3275 24.221 20.1567 24.0511 20.0674 23.8369L19.1976 21.75H13.8024L12.9326 23.8369C12.8433 24.0511 12.6725 24.221 12.4579 24.3093C12.2432 24.3976 12.0023 24.397 11.7881 24.3076C11.5739 24.2183 11.404 24.0475 11.3157 23.8329C11.2274 23.6182 11.228 23.3773 11.3174 23.1631L15.6924 12.6631C15.7589 12.5037 15.871 12.3676 16.0147 12.2718C16.1585 12.1761 16.3273 12.125 16.5 12.125ZM12.125 27C11.8929 27 11.6704 27.0922 11.5063 27.2563C11.3422 27.4204 11.25 27.6429 11.25 27.875C11.25 28.1071 11.3422 28.3296 11.5063 28.4937C11.6704 28.6578 11.8929 28.75 12.125 28.75H27.875C28.1071 28.75 28.3296 28.6578 28.4937 28.4937C28.6578 28.3296 28.75 28.1071 28.75 27.875C28.75 27.6429 28.6578 27.4204 28.4937 27.2563C28.3296 27.0922 28.1071 27 27.875 27H12.125ZM11.25 31.375C11.25 31.1429 11.3422 30.9204 11.5063 30.7563C11.6704 30.5922 11.8929 30.5 12.125 30.5H22.625C22.8571 30.5 23.0796 30.5922 23.2437 30.7563C23.4078 30.9204 23.5 31.1429 23.5 31.375C23.5 31.6071 23.4078 31.8296 23.2437 31.9937C23.0796 32.1578 22.8571 32.25 22.625 32.25H12.125C11.8929 32.25 11.6704 32.1578 11.5063 31.9937C11.3422 31.8296 11.25 31.6071 11.25 31.375ZM26.125 18.25C26.125 18.0179 26.0328 17.7954 25.8687 17.6313C25.7046 17.4672 25.4821 17.375 25.25 17.375C25.0179 17.375 24.7954 17.4672 24.6313 17.6313C24.4672 17.7954 24.375 18.0179 24.375 18.25V20H22.625C22.3929 20 22.1704 20.0922 22.0063 20.2563C21.8422 20.4204 21.75 20.6429 21.75 20.875C21.75 21.1071 21.8422 21.3296 22.0063 21.4937C22.1704 21.6578 22.3929 21.75 22.625 21.75H24.375V23.5C24.375 23.7321 24.4672 23.9546 24.6313 24.1187C24.7954 24.2828 25.0179 24.375 25.25 24.375C25.4821 24.375 25.7046 24.2828 25.8687 24.1187C26.0328 23.9546 26.125 23.7321 26.125 23.5V21.75H27.875C28.1071 21.75 28.3296 21.6578 28.4937 21.4937C28.6578 21.3296 28.75 21.1071 28.75 20.875C28.75 20.6429 28.6578 20.4204 28.4937 20.2563C28.3296 20.0922 28.1071 20 27.875 20H26.125V18.25ZM23.5 5.125L29.625 12.125H24.375C24.1429 12.125 23.9204 12.0328 23.7563 11.8687C23.5922 11.7046 23.5 11.4821 23.5 11.25V5.125Z" fill="#9B552E"></path>
+</svg>`
+  }
+];
+---
+
+<div class="process">
+  <div class="container">
+    <div class="process__content relative flex items-start justify-between gap-[34rem] max-md:flex-col-reverse before:content-[''] before:absolute before:top-[-38rem] before:left-[-11rem] before:z-[-1] before:block before:h-[74rem] before:w-[74rem] before:rounded-[1.08rem] before:border-[3.3rem] before:border-primary/5 max-md:before:hidden after:content-[''] after:absolute after:top-[-50rem] after:left-[-26rem] after:z-[-1] after:block after:h-[43rem] after:w-[43rem] after:rounded-[1.08rem] after:border-[3.3rem] after:border-primary/5 max-md:after:hidden">
+      
+      <!-- Content -->
+      <div class="process__info section-content mt-0 max-md:mt-0">
+        <h2 class="mb-[16rem] text-[38rem] font-bold uppercase leading-[44rem] max-md:mb-[10rem] max-md:text-center max-md:text-[18rem] max-md:leading-[21rem] max-md:mt-0">
+          Admission procces
+        </h2>
+        
+        <div class="process__info__description section-content__description">
+          <p class="mb-0 leading-[18rem] text-justify">
+            Applying to university is a significant step in your life, opening up new horizons and opportunities for growth. This process can be exciting, but with the right approach and preparation, you can navigate it successfully. We are here to support you every step of the way on this exciting journey. <a href="#" class="font-bold italic text-accent/25 after:ml-[5rem] after:inline-block after:content-['→']">Read more</a>
+          </p>
+        </div>
+
+        <div class="process__steps mt-[25rem] flex items-center justify-between max-md:flex-col">
+          {steps.map((step) => (
+            <div class="process-item relative border-r-[2rem] border-primary/10 px-[10rem] py-[50rem] max-md:border-b-[2rem] max-md:border-r-0 max-md:px-[10rem] max-md:py-[30rem] first:pl-[7rem] last:border-r-0 last:pr-[7rem] max-md:last:border-b-0">
+              <div class="process-item__counter relative z-[-1] translate-y-[3rem] text-center text-[45rem] font-bold uppercase leading-[20rem] text-primary/25 max-md:text-[32rem]">
+                <span class="process-item__counter-number text-[72rem] max-md:text-[46rem]">{step.number}</span>
+                <span>Step</span>
+              </div>
+              
+              <div class="process-item__content relative z-10 bg-white pt-[14rem] text-center">
+                <h3 class="mb-[13rem] whitespace-nowrap text-[18rem] font-bold uppercase leading-[18rem] max-md:text-[14rem]">{step.title}</h3>
+                <p class="px-[9rem] text-center leading-[18rem] max-md:leading-[13.8rem]">{step.description}</p>
+                <div class="process-item__icon mt-[24rem] flex justify-center">
+                  <Fragment set:html={step.svg} />
+                </div>
+              </div>
+              
+              <div class="shadow-box absolute right-[calc(50%-82.5rem)] top-[calc(50%-45rem)] z-[-2] h-[90rem] w-[165rem] shadow-[0_-4rem_30rem_0_rgba(0,69,98,0.12)] max-md:top-[calc(50%-30rem)]"></div>
+            </div>
+          ))}
+        </div>
+      </div>
+
+      <!-- Image -->
+      <div class="process__image section-image section-image--right relative w-full max-md:w-full
+            after:content-[''] after:absolute after:right-[-1rem] after:bottom-[-20rem] after:z-[-1]
+            after:h-[50rem] after:w-[50rem] after:rounded-[1.08rem] after:border-[2.4rem] after:border-primary/25">
+  <img 
+    src="/process.png" 
+    alt="process" 
+    class="h-[450rem] w-[407rem] object-cover max-md:h-[293rem] max-md:w-full"
+  />
+</div>
+      
+    </div>
+  </div>
+</div>

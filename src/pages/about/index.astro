@@ -1,0 +1,31 @@
+---
+// src/pages/index.astro
+import Layout from '../../layouts/Layout.astro';
+import Header from '../../components/layout/Header.astro';
+import About from '../../components/sections/About.astro';
+import ContactForm from '../../components/sections/ContactForm.astro';
+import  Content  from '../../components/sections/Content.astro';
+import Footer from '../../components/layout/Footer.astro';
+import FixedButtons from '../../components/layout/FixedButtons.astro';
+---
+
+<Layout 
+  title="About - University of Kyiv"
+  seoTitle="University of Kyiv - About"
+  seoDescription="University of Kyiv is a modern educational institution providing high-quality higher education. Study in Ukraine with international recognition."
+  seoKeywords={["University of Kyiv", "higher education", "study in Ukraine", "international students", "Kyiv university", "education abroad"]}
+  ogImage="/og-image.jpg"
+>
+  <Header />
+  
+  <main>
+    <About />
+    <div class="h-[124rem] max-md:h-[80rem]"></div>
+    <Content/>
+    <div class="h-[124rem] max-md:h-[80rem]"></div>
+    <ContactForm />
+  </main>
+  
+  <Footer />
+  <FixedButtons />
+</Layout>

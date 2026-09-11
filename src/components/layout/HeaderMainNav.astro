@@ -1,0 +1,188 @@
+---
+// src/components/layout/HeaderMainNav.astro
+import Button from '../ui/Button.astro';
+
+const navItems = [
+  {
+    label: 'About Us',
+    href: '#',
+    children: [
+      { label: 'About Us', href: '/about/' },
+      { label: 'About Sub 1', href: '#' },
+      { label: 'About Sub 2', href: '#' },
+      { 
+        label: 'About Sub 3', 
+        href: '#',
+        children: [
+          { label: 'About Sub Sub 1', href: '#' },
+          { label: 'About Sub Sub 2', href: '#' },
+          { label: 'About Sub Sub 3', href: '#' },
+          { label: 'About Sub Sub 4', href: '#' },
+        ]
+      },
+      { label: 'About Sub 4', href: '#' },
+      { label: 'About Sub 5', href: '#' },
+    ]
+  },
+  { label: 'Schools', href: '#' },
+  { label: 'Admissions', href: '#' },
+  { label: 'For students', href: '#' },
+  { label: 'Educational system', href: '#' },
+  { label: 'FAQ', href: '#' },
+];
+---
+
+<div class="header__main-navigation h-[110rem] max-md:h-[58rem]">
+  <div class="header__main-navigation-content container h-full flex items-center justify-between">
+    <!-- Logo -->
+    <div class="header-logo">
+      <a href="/" class="custom-logo-link" rel="home" aria-current="page">
+        <img 
+          width="214" 
+          height="62" 
+          src="/logo.svg" 
+          class="custom-logo w-[214rem] h-[62rem] max-md:w-[129.83rem] max-md:h-[38rem]" 
+          alt="University of Kyiv" 
+        />
+      </a>
+    </div>
+
+    <!-- Mobile Social -->
+    <div class="header-social header-social--mobile block md:hidden ml-[15rem]">
+      <ul class="flex items-center gap-[16rem]">
+        <li>
+          <a href="https://facebook.com" title="Facebook" target="_blank" class="flex hover:[&_svg_path]:fill-accent transition-colors duration-500">
+            <svg width="16rem" height="16rem" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M13.6562 0H2.34375C1.05151 0 0 1.05151 0 2.34375V13.6562C0 14.9485 1.05151 16 2.34375 16H7.0625V10.3438H5.1875V7.53125H7.0625V5.625C7.0625 4.0741 8.3241 2.8125 9.875 2.8125H12.7188V5.625H9.875V7.53125H12.7188L12.25 10.3438H9.875V16H13.6562C14.9485 16 16 14.9485 16 13.6562V2.34375C16 1.05151 14.9485 0 13.6562 0Z" fill="#004562"/>
+            </svg>
+          </a>
+        </li>
+        <li>
+          <a href="https://instagram.com" title="Instagram" target="_blank" class="flex hover:[&_svg_path]:fill-accent transition-colors duration-500">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16rem" height="16rem" viewBox="0 0 16 16" fill="none">
+              <g clip-path="url(#clip0_4_132)">
+                <path d="M13.6562 0H2.34375C1.05151 0 0 1.05151 0 2.34375V13.6562C0 14.9485 1.05151 16 2.34375 16H13.6562C14.9485 16 16 14.9485 16 13.6562V2.34375C16 1.05151 14.9485 0 13.6562 0ZM8.03125 12.1875C5.70496 12.1875 3.8125 10.295 3.8125 7.96875C3.8125 5.64246 5.70496 3.75 8.03125 3.75C10.3575 3.75 12.25 5.64246 12.25 7.96875C12.25 10.295 10.3575 12.1875 8.03125 12.1875ZM12.7188 4.6875C11.9434 4.6875 11.3125 4.05664 11.3125 3.28125C11.3125 2.50586 11.9434 1.875 12.7188 1.875C13.4941 1.875 14.125 2.50586 14.125 3.28125C14.125 4.05664 13.4941 4.6875 12.7188 4.6875Z" fill="#004562"/>
+                <path d="M12.7188 2.8125C12.4601 2.8125 12.25 3.02258 12.25 3.28125C12.25 3.53992 12.4601 3.75 12.7188 3.75C12.9774 3.75 13.1875 3.53992 13.1875 3.28125C13.1875 3.02258 12.9774 2.8125 12.7188 2.8125Z" fill="#004562"/>
+                <path d="M8 5C6.34598 5 5 6.34598 5 8C5 9.65402 6.34598 11 8 11C9.65402 11 11 9.65402 11 8C11 6.34598 9.65402 5 8 5Z" fill="#004562"/>
+              </g>
+              <defs>
+                <clipPath id="clip0_4_132">
+                  <rect width="16rem" height="16rem" fill="white"/>
+                </clipPath>
+              </defs>
+            </svg>
+          </a>
+        </li>
+        <li>
+          <a href="#" title="Linked In" target="_blank" class="flex hover:[&_svg_path]:fill-accent transition-colors duration-500">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16rem" height="16rem" viewBox="0 0 16 16" fill="none">
+              <path fill-rule="evenodd" clip-rule="evenodd" d="M13.6562 0H9H2.34375C1.05151 0 0 1.05151 0 2.34375V13.6562C0 14.9485 1.05151 16 2.34375 16H13.6562C14.9485 16 16 14.9485 16 13.6562V7V2.34375C16 1.05151 14.9485 0 13.6562 0ZM4.79935 5.87305H2.66602V13.0004H4.79935V5.87305ZM8.33894 6.99533V5.864H6.2276V13H8.35427V9.55867C8.35427 8.65267 8.56227 7.77467 9.78027 7.77467C11.0363 7.77467 11.1989 8.812 11.1989 9.61867V13H13.3323V9.186C13.3323 7.31267 12.8343 5.87267 10.5309 5.87267C10.0996 5.85402 9.67089 5.94768 9.28665 6.14447C8.90241 6.34127 8.57586 6.63445 8.33894 6.99533ZM4.61886 4.66443C4.73603 4.48856 4.79868 4.282 4.79894 4.07067C4.79946 3.93025 4.77226 3.79112 4.71889 3.66124C4.66552 3.53137 4.58704 3.41331 4.48794 3.31383C4.38883 3.21436 4.27107 3.13543 4.14139 3.08158C4.01172 3.02772 3.87268 3 3.73227 3C3.521 3.001 3.31474 3.06445 3.13944 3.18236C2.96413 3.30027 2.8276 3.46738 2.74701 3.66268C2.66643 3.85798 2.64538 4.07275 2.68653 4.27998C2.72768 4.48721 2.82918 4.67764 2.97827 4.82733C3.12708 4.97693 3.31703 5.07888 3.52396 5.12019C3.73088 5.16151 3.94542 5.14032 4.14027 5.05933C4.3352 4.97769 4.50168 4.84031 4.61886 4.66443Z" fill="#004562"/>
+            </svg>
+          </a>
+        </li>
+        <li>
+          <a href="#" title="Tik Tok" target="_blank" class="flex hover:[&_svg_path]:fill-accent transition-colors duration-500">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16rem" height="16rem" viewBox="0 0 16 16" fill="none">
+              <path fill-rule="evenodd" clip-rule="evenodd" d="M9 0H13.6562C14.9485 0 16 1.05151 16 2.34375V7V13.6562C16 14.9485 14.9485 16 13.6562 16H2.34375C1.05151 16 0 14.9485 0 13.6562V2.34375C0 1.05151 1.05151 0 2.34375 0H9ZM10.3601 2C10.36 2.6916 10.6112 3.35968 11.0668 3.88C11.9734 4.92667 13.2268 4.86667 13.2268 4.86667V6.92667C12.1983 6.92843 11.1954 6.60657 10.3601 6.00667V10.2C10.3601 12.3 8.6601 14 6.56677 14C4.61344 14 2.77344 12.42 2.77344 10.2C2.77344 7.92 4.78677 6.13333 7.08677 6.44V8.54667C5.94677 8.19333 4.8401 9.05333 4.8401 10.2C4.8401 11.16 5.62677 11.9333 6.57344 11.9333C7.02117 11.9336 7.4515 11.7599 7.77364 11.449C8.09578 11.1381 8.28455 10.7141 8.3001 10.2667V2H10.3601Z" fill="#004562"/>
+            </svg>
+          </a>
+        </li>
+      </ul>
+    </div>
+
+    <!-- Burger Button -->
+    <div class="header-burger-button block md:hidden cursor-pointer" id="headerBurgerButton">
+      <svg class="unactive-icon" width="24rem" height="24rem" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M1.00008 9.99883C0.734845 9.99883 0.48047 9.89347 0.292918 9.70592C0.105366 9.51836 0 9.26399 0 8.99875V1.00008C0 0.734845 0.105366 0.48047 0.292918 0.292918C0.48047 0.105366 0.734845 0 1.00008 0H9.00075C9.26599 0 9.52036 0.105366 9.70792 0.292918C9.89547 0.48047 10.0008 0.734845 10.0008 1.00008V8.99875C10.0008 9.26399 9.89547 9.51836 9.70792 9.70592C9.52036 9.89347 9.26599 9.99883 9.00075 9.99883H1.00008ZM15.0013 9.99883C14.736 9.99883 14.4816 9.89347 14.2941 9.70592C14.1065 9.51836 14.0012 9.26399 14.0012 8.99875V1.00008C14.0012 0.734845 14.1065 0.48047 14.2941 0.292918C14.4816 0.105366 14.736 0 15.0013 0H22.9999C23.2652 0 23.5195 0.105366 23.7071 0.292918C23.8946 0.48047 24 0.734845 24 1.00008V8.99875C24 9.26399 23.8946 9.51836 23.7071 9.70592C23.5195 9.89347 23.2652 9.99883 22.9999 9.99883H15.0013ZM1.00008 24C0.734845 24 0.48047 23.8946 0.292918 23.7071C0.105366 23.5195 0 23.2652 0 22.9999V14.9992C0 14.734 0.105366 14.4796 0.292918 14.2921C0.48047 14.1045 0.734845 13.9992 1.00008 13.9992H9.00075C9.26599 13.9992 9.52036 14.1045 9.70792 14.2921C9.89547 14.4796 10.0008 14.734 10.0008 14.9992V22.9999C10.0008 23.2652 9.89547 23.5195 9.70792 23.7071C9.52036 23.8946 9.26599 24 9.00075 24H1.00008ZM15.0013 24C14.736 24 14.4816 23.8946 14.2941 23.7071C14.1065 23.5195 14.0012 23.2652 14.0012 22.9999V14.9992C14.0012 14.734 14.1065 14.4796 14.2941 14.2921C14.4816 14.1045 14.736 13.9992 15.0013 13.9992H22.9999C23.2652 13.9992 23.5195 14.1045 23.7071 14.2921C23.8946 14.4796 24 14.734 24 14.9992V22.9999C24 23.2652 23.8946 23.5195 23.7071 23.7071C23.5195 23.8946 23.2652 24 22.9999 24H15.0013Z" fill="#9B552E"/>
+      </svg>
+      <svg class="active-icon" xmlns="http://www.w3.org/2000/svg" width="22rem" height="22rem" viewBox="0 0 22 22" fill="none">
+        <path d="M2.18452 0.800277L10.9959 9.60518L19.7137 0.888677C20.3078 0.359577 20.9227 0.675477 21.1684 0.940677C21.326 1.13273 21.4073 1.37613 21.3968 1.62435C21.3862 1.87257 21.2846 2.10819 21.1112 2.28618L12.3921 11.0014L21.1112 19.714C21.4986 20.039 21.4986 20.676 21.1879 21.0322C20.8759 21.3871 20.3039 21.5925 19.7644 21.1713L10.9959 12.3976L2.21702 21.1752C1.83222 21.5197 1.19782 21.4495 0.884523 21.1076C0.569923 20.7644 0.450323 20.1716 0.852023 19.753L9.59972 11.0014L0.888423 2.28618C0.569923 1.93518 0.459423 1.29298 0.888423 0.888677C1.31742 0.484377 1.95702 0.540277 2.18452 0.800277Z" fill="#9B552E" stroke="#9B552E"/>
+      </svg>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="hidden md:flex items-center gap-[60rem]">
+  <ul class="header-main-navigation flex items-center gap-[32rem]">
+    {navItems.map((item) => (
+      <li class:list={['menu-item relative', item.children ? 'menu-item-has-children group' : '']}>
+        <a href={item.href} class="text-[18rem] block hover:text-accent transition-colors duration-500 ">
+          {item.label}
+        </a>
+        {item.children && (
+          <>
+            <span class="absolute bottom-[-12rem] right-[calc(50%-7rem)] opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-500">
+              <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M3.81325 5.15296C3.90724 5.05502 4.03469 5 4.16759 5C4.30049 5 4.42795 5.05502 4.52194 5.15296L7.00286 7.73897L9.48379 5.15296C9.57831 5.0578 9.70492 5.00514 9.83633 5.00633C9.96774 5.00752 10.0934 5.06246 10.1864 5.15932C10.2793 5.25619 10.332 5.38722 10.3332 5.5242C10.3343 5.66117 10.2838 5.79314 10.1925 5.89167L7.35721 8.84704C7.26322 8.94498 7.13576 9 7.00286 9C6.86996 9 6.74251 8.94498 6.64852 8.84704L3.81325 5.89167C3.71929 5.7937 3.6665 5.66084 3.6665 5.52232C3.6665 5.38379 3.71929 5.25093 3.81325 5.15296Z" fill="#9B552E"/>
+              </svg>
+            </span>
+            <ul class="absolute top-[33rem] min-w-[250rem] rounded-[2rem] bg-white/86 p-[8rem] backdrop-blur-[16rem] shadow-[0_2.2rem_22rem_0_rgba(0,0,0,0.06)] invisible opacity-0 group-hover:visible group-hover:opacity-100 transition-all duration-500 ease">
+              {item.children.map((child) => (
+                <li class:list={[
+                  'menu-item border-b-[1rem] border-[#DDDDDD] py-[7rem] pl-[7rem] last:border-b-0 ',
+                  child.children ? 'menu-item-has-children relative group/sub' : ''
+                ]}>
+                  <a href={child.href} class="text-[15rem] block w-full h-full hover:text-accent transition-colors duration-500">
+                    {child.label}
+                  </a>
+                  {child.children && (
+                    <>
+                      <span class="absolute right-[5rem] top-[12rem]">
+                        <svg width="4" height="8" viewBox="0 0 4 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+                          <path d="M0.15296 7.18651C0.0550196 7.09252 0 6.96506 0 6.83216C0 6.69926 0.0550196 6.5718 0.15296 6.47782L2.73897 3.99689L0.15296 1.51597C0.0577953 1.42144 0.00513768 1.29484 0.00632787 1.16343C0.00751829 1.03201 0.0624611 0.906308 0.159323 0.813382C0.256186 0.720456 0.387217 0.667746 0.524196 0.666604C0.661174 0.665462 0.79314 0.71598 0.891671 0.807277L3.84704 3.64255C3.94498 3.73654 4 3.86399 4 3.99689C4 4.12979 3.94498 4.25725 3.84704 4.35124L0.891671 7.18651C0.793701 7.28047 0.660844 7.33325 0.522315 7.33325C0.383786 7.33325 0.250929 7.28047 0.15296 7.18651Z" fill="#004562"/>
+                        </svg>
+                      </span>
+                      <ul class="sub-menu absolute left-full top-[-15rem] ml-[12rem] min-w-[250rem] rounded-[2rem] bg-white/86 p-[8rem] backdrop-blur-[16rem] shadow-[0_2.2rem_22rem_0_rgba(0,0,0,0.06)] invisible opacity-0 group-hover/sub:visible group-hover/sub:opacity-100 transition-all duration-500 ease">
+                        {child.children.map((subChild) => (
+                          <li class="menu-item border-b-[1rem] border-[#DDDDDD] py-[7rem] last:border-b-0 pl-[7rem]">
+                            <a href={subChild.href} class="text-[15rem] block w-full h-full hover:text-accent transition-colors duration-500">
+                              {subChild.label}
+                            </a>
+                          </li>
+                        ))}
+                      </ul>
+                    </>
+                  )}
+                </li>
+              ))}
+            </ul>
+          </>
+        )}
+      </li>
+    ))}
+  </ul>
+  <div class="header__button">
+    <Button href="/apply-now/" variant="small">Apply Now</Button>
+  </div>
+</nav>
+  </div>
+</div>
+
+<style>
+  /* Переключение иконок бургера */
+  .header-burger-button .active-icon { display: none; }
+  .header-burger-button .unactive-icon { display: block; }
+  .header-burger-button.active-burger-button .active-icon { display: block; }
+  .header-burger-button.active-burger-button .unactive-icon { display: none; }
+
+  /* Скрытие кнопки на мобильных */
+  .header__button {
+    display: none;
+  }
+  @media (min-width: 992px) {
+    .header__button {
+      display: block;
+    }
+  }
+</style>
+
+<script>
+  const burgerButton = document.getElementById('headerBurgerButton');
+  const mobileNav = document.getElementById('mobileNavigationWindow');
+  
+  if (burgerButton && mobileNav) {
+    burgerButton.addEventListener('click', () => {
+      burgerButton.classList.toggle('active-burger-button');
+      mobileNav.classList.toggle('active-mobile-navigation-window');
+    });
+  }
+</script>

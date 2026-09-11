@@ -1,0 +1,57 @@
+---
+// src/components/ui/Button.astro
+export interface Props {
+  href?: string;
+  variant?: 'primary' | 'primary-bordered' | 'accent-bordered' | 'small';
+  class?: string;
+  type?: 'button' | 'submit' | 'reset';
+}
+
+const { 
+  href, 
+  variant = 'primary', 
+  class: className = "",
+  type = 'button'
+} = Astro.props;
+
+const baseLinkClasses = "flex h-[32rem]  items-center justify-center rounded-[3rem] text-[14rem] font-bold max-md:h-[20rem] max-md:w-[97rem] max-md:text-[9rem]";
+
+const baseButtonClasses = "h-[32rem] w-[152rem] rounded-[3rem] border-none font-serif text-[14rem] font-bold transition-all duration-500 hover:cursor-pointer max-md:h-[20rem] max-md:w-[97rem] max-md:text-[9rem]";
+
+const variantClasses = {
+  'primary': {
+    link: "bg-accent text-white hover:bg-primary",
+    button: "bg-accent text-white hover:bg-primary"
+  },
+  'small': {
+    link: "bg-accent text-white hover:bg-primary w-[113rem]",
+    button: "bg-accent text-white hover:bg-primary w-[113rem]"
+  },
+  'primary-bordered': {
+    link: "bg-white w-[152rem] text-primary border-[1.6rem] border-primary hover:bg-primary hover:text-white",
+    button: "bg-white w-[152rem] text-primary border-[1.6rem] border-primary hover:bg-primary hover:text-white"
+  },
+  'accent-bordered': {
+    link: "bg-white w-[152rem] text-accent border-[1.6rem] border-accent hover:bg-accent hover:text-white",
+    button: "bg-white w-[152rem] text-accent border-[1.6rem] border-accent hover:bg-accent hover:text-white"
+  },
+};
+---
+
+{
+  href ? (
+    <a 
+      href={href} 
+      class={`${baseLinkClasses} ${variantClasses[variant].link} ${className}`}
+    >
+      <slot />
+    </a>
+  ) : (
+    <button 
+      type={type} 
+      class={`${baseButtonClasses} ${variantClasses[variant].button} ${className}`}
+    >
+      <slot />
+    </button>
+  )
+}

@@ -1,0 +1,51 @@
+---
+// src/pages/index.astro
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/layout/Header.astro';
+import HeroSlider from '../components/sections/HeroSlider.astro';
+import QuickContact from '../components/sections/QuickContact.astro';
+import Advantages from '../components/sections/Advantages.astro';
+import About from '../components/sections/About.astro';
+import Offer from '../components/sections/Offer.astro';
+import Process from '../components/sections/Process.astro';
+import News from '../components/sections/News.astro';
+import Forms from '../components/sections/Forms.astro';
+import Feedback from '../components/sections/Feedback.astro';
+import ContactForm from '../components/sections/ContactForm.astro';
+import Footer from '../components/layout/Footer.astro';
+import FixedButtons from '../components/layout/FixedButtons.astro';
+---
+
+<Layout 
+  title="Home - University of Kyiv"
+  seoTitle="University of Kyiv - Home"
+  seoDescription="University of Kyiv is a modern educational institution providing high-quality higher education. Study in Ukraine with international recognition."
+  seoKeywords={["University of Kyiv", "higher education", "study in Ukraine", "international students", "Kyiv university", "education abroad"]}
+  ogImage="/og-image.jpg"
+>
+  <Header />
+  
+  <main>
+    <HeroSlider />
+    <QuickContact />
+    <div class="h-[124rem] max-md:h-[80rem]"></div>
+    <Advantages />
+    <div class="h-[124rem] max-md:h-[80rem]"></div>
+    <About />
+    <div class="h-[124rem] max-md:h-[80rem]"></div>
+    <Offer />
+    <div class="h-[124rem] max-md:h-[80rem]"></div>
+    <Process />
+    <div class="h-[124rem] max-md:h-[80rem]"></div>
+    <News />
+    <div class="h-[124rem] max-md:h-[80rem]"></div>
+    <Forms />
+    <div class="h-[124rem] max-md:h-[80rem]"></div>
+    <Feedback />
+    <div class="h-[124rem] max-md:h-[80rem]"></div>
+    <ContactForm />
+  </main>
+  
+  <Footer />
+  <FixedButtons />
+</Layout>

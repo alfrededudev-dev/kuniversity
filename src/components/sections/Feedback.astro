@@ -1,0 +1,220 @@
+---
+// src/components/sections/Feedback.astro
+import { Swiper, SwiperSlide, SwiperWrapper } from 'astro-swiper';
+import SectionTitle from '../ui/SectionTitle.astro';
+
+const feedbacks = [
+  {
+    text: 'The degrees have been validated by WHO and UNESCO The best thing about studying MBBS in Russia that there is no entrance test for admission in Russian medical colleges/universities. The degrees have been validated by WHO and UNESCO The best thing about studying MBBS in Russia that there is no entrance test for admission best thing about studying MBBS in Russia that there is no entrance test for admis',
+    name: 'Everlasting Mercy',
+    country: 'Nigerian student',
+    image: '/Ellipse.png'
+  },
+  {
+    text: 'The degrees have been validated by WHO and UNESCO The best thing about studying MBBS in Russia that there is no entrance test for admission in Russian medical colleges/universities. The degrees have been validated by WHO and UNESCO The best thing about studying MBBS in Russia that there is no entrance test for admission best thing about studying MBBS in Russia that there is no entrance test for admis',
+    name: 'Everlasting Mercy',
+    country: 'Nigerian student',
+    image: '/Ellipse.png'
+  },
+  {
+    text: 'The degrees have been validated by WHO and UNESCO The best thing about studying MBBS in Russia that there is no entrance test for admission in Russian medical colleges/universities. The degrees have been validated by WHO and UNESCO The best thing about studying MBBS in Russia that there is no entrance test for admission best thing about studying MBBS in Russia that there is no entrance test for admis',
+    name: 'Everlasting Mercy',
+    country: 'Nigerian student',
+    image: '/Ellipse.png'
+  },
+  {
+    text: 'The degrees have been validated by WHO and UNESCO The best thing about studying MBBS in Russia that there is no entrance test for admission in Russian medical colleges/universities. The degrees have been validated by WHO and UNESCO The best thing about studying MBBS in Russia that there is no entrance test for admission best thing about studying MBBS in Russia that there is no entrance test for admis',
+    name: 'Everlasting Mercy',
+    country: 'Nigerian student',
+    image: '/Ellipse.png'
+  },
+  {
+    text: 'The degrees have been validated by WHO and UNESCO The best thing about studying MBBS in Russia that there is no entrance test for admission in Russian medical colleges/universities. The degrees have been validated by WHO and UNESCO The best thing about studying MBBS in Russia that there is no entrance test for admission best thing about studying MBBS in Russia that there is no entrance test for admis',
+    name: 'Everlasting Mercy',
+    country: 'Nigerian student',
+    image: '/Ellipse.png'
+  },
+  {
+    text: 'The degrees have been validated by WHO and UNESCO The best thing about studying MBBS in Russia that there is no entrance test for admission in Russian medical colleges/universities. The degrees have been validated by WHO and UNESCO The best thing about studying MBBS in Russia that there is no entrance test for admission best thing about studying MBBS in Russia that there is no entrance test for admis',
+    name: 'Everlasting Mercy',
+    country: 'Nigerian student',
+    image: '/Ellipse.png'
+  },
+  {
+    text: 'The degrees have been validated by WHO and UNESCO The best thing about studying MBBS in Russia that there is no entrance test for admission in Russian medical colleges/universities. The degrees have been validated by WHO and UNESCO The best thing about studying MBBS in Russia that there is no entrance test for admission best thing about studying MBBS in Russia that there is no entrance test for admis',
+    name: 'Everlasting Mercy',
+    country: 'Nigerian student',
+    image: '/Ellipse.png'
+  }
+];
+
+const swiperOptions = {
+  slidesPerView: 2,
+  spaceBetween: 20,
+  loop: true,
+  autoplay: {
+    delay: 5000,
+    disableOnInteraction: false
+  },
+  pagination: {
+    clickable: true,
+    el: '#feedbackPagination',
+    renderBullet: function(index: number, className: string) {
+      return `<span class="${className}"></span>`;
+    }
+  },
+  navigation: {
+    prevEl: '#prevFeedback',
+    nextEl: '#nextFeedback'
+  },
+  breakpoints: {
+    0: {
+      slidesPerView: 1,
+      spaceBetween: 10
+    },
+    992: {
+      slidesPerView: 2,
+      spaceBetween: 20
+    }
+  }
+};
+---
+
+<section class="feedback">
+  <div class="container">
+    <!-- Section Title -->
+    <SectionTitle supTitle="We offer the following" title="Feedback" />
+
+    <!-- Feedback Content -->
+    <div class="feedback__content relative mt-[32rem] px-[98rem] max-md:mt-[18rem] max-md:px-0 before:content-[''] before:absolute before:top-[-100rem] before:right-[254rem] before:z-[-1] before:block before:h-[57rem] before:w-[57rem] before:rounded-[1.08rem] before:border-[3.3rem] before:border-primary/5 max-md:before:top-[-109rem] max-md:before:right-[80rem] max-md:before:h-[24rem] max-md:before:w-[24rem] after:content-[''] after:absolute after:top-[-112rem] after:right-[242rem] after:z-[-1] after:block after:h-[33rem] after:w-[33rem] after:rounded-[1.08rem] after:border-[3.3rem] after:border-primary/5 max-md:after:top-[-116rem] max-md:after:right-[74rem] max-md:after:h-[14rem] max-md:after:w-[14rem]">
+      
+      <!-- Feedback Swiper -->
+      <Swiper options={swiperOptions} class="feedback-swiper">
+        <SwiperWrapper>
+          {feedbacks.map((item) => (
+            <SwiperSlide>
+              <div class="feedback-item px-[10rem] max-md:px-0">
+                <!-- Обёртка: на мобилке — строка, на десктопе — колонка -->
+                <div class="flex flex-col max-md:flex-row max-md:items-start max-md:gap-[15rem]">
+                  
+                  <!-- Иконка кавычек -->
+                  <div class="feedback-item__icon mb-[24rem] max-md:mb-0 max-md:shrink-0 max-md:pl-[15rem]">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="36" height="31" viewBox="0 0 36 31" fill="none" class="h-[31rem] w-[36rem] max-md:h-[30rem] max-md:w-[30rem]">
+                      <path d="M14.8408 5.58294C11.8041 6.07267 9.69796 7.15008 8.52245 8.81517C7.4449 10.3823 6.90612 13.1248 6.90612 17.0427H14.4V31H0V19.2464C0 12.8799 1.17551 8.08057 3.52653 4.84834C5.87755 1.61611 9.64898 0 14.8408 0V5.58294ZM36 5.58294C32.9633 6.07267 30.8571 7.15008 29.6816 8.81517C28.6041 10.3823 28.0653 13.1248 28.0653 17.0427H35.5592V31H21.1592V19.2464C21.1592 12.8799 22.3347 8.08057 24.6857 4.84834C27.0367 1.61611 30.8082 0 36 0V5.58294Z" fill="#9B552E"/>
+                    </svg>
+                  </div>
+
+                  <!-- Текст + автор -->
+                  <div class="max-md:flex-1">
+                    <div class="feedback-item__content mb-[32rem] text-justify text-[16rem] leading-normal max-md:mb-[14rem] max-md:text-[12rem]">
+                      <p>{item.text}</p>
+                    </div>
+                    <div class="feedback-item__person flex items-center gap-[32rem] max-md:gap-[12rem]">
+                      <img 
+                        src={item.image} 
+                        alt={item.name} 
+                        class="h-[69rem] w-[69rem] rounded-full border-[2rem] border-accent object-cover max-md:h-[48rem] max-md:w-[48rem]"
+                      />
+                      <div class="feedback-item__person-info">
+                        <div class="name mb-[15rem] text-[18rem] font-bold max-md:mb-[5rem] max-md:text-[12rem]">{item.name}</div>
+                        <div class="country text-[16rem] text-accent max-md:text-[12rem]">{item.country}</div>
+                      </div>
+                    </div>
+                  </div>
+
+                </div>
+              </div>
+            </SwiperSlide>
+          ))}
+        </SwiperWrapper>
+      </Swiper>
+
+      <!-- Пагинация — ВНЕ Swiper -->
+      <div id="feedbackPagination" class="feedback-pagination"></div>
+
+      <!-- Кастомные стрелки навигации -->
+      <div class="feedback-control absolute left-0 top-[calc(50%-37rem)] flex w-full items-center justify-between max-md:hidden">
+        <div id="prevFeedback" class="feedback-control__button flex h-[74rem] w-[38rem] cursor-pointer items-center justify-center rounded-[30rem] bg-white shadow-[0_2.2rem_22rem_0_rgba(0,0,0,0.06)]">
+          <svg xmlns="http://www.w3.org/2000/svg" width="14" height="22" viewBox="0 0 14 22" fill="none">
+            <path d="M1.18185 12.0891L10.6415 21.5485C11.2433 22.1505 12.2189 22.1505 12.8204 21.5485C13.4219 20.947 13.4219 19.9714 12.8204 19.3699L4.45001 10.9998L12.8201 2.63005C13.4216 2.0283 13.4216 1.05282 12.8201 0.451311C12.2186 -0.150437 11.243 -0.150437 10.6413 0.451311L1.1816 9.91081C0.880849 10.2117 0.730643 10.6057 0.730643 10.9998C0.730643 11.3941 0.881141 11.7884 1.18185 12.0891Z" fill="#004562"/>
+          </svg>
+        </div>
+        <div id="nextFeedback" class="feedback-control__button flex h-[74rem] w-[38rem] cursor-pointer items-center justify-center rounded-[30rem] bg-white shadow-[0_2.2rem_22rem_0_rgba(0,0,0,0.06)]">
+          <svg xmlns="http://www.w3.org/2000/svg" width="14" height="22" viewBox="0 0 14 22" fill="none">
+            <path d="M12.8182 12.0891L3.35848 21.5485C2.75674 22.1505 1.7811 22.1505 1.17964 21.5485C0.578139 20.947 0.578139 19.9714 1.17964 19.3699L9.54999 10.9998L1.17989 2.63005C0.578382 2.0283 0.578382 1.05282 1.17989 0.451311C1.78139 -0.150437 2.75698 -0.150437 3.35873 0.451311L12.8184 9.91081C13.1192 10.2117 13.2694 10.6057 13.2694 10.9998C13.2694 11.3941 13.1189 11.7884 12.8182 12.0891Z" fill="#004562"/>
+          </svg>
+        </div>
+      </div>
+
+      <!-- Send Feedback Link -->
+      <div class="send-feedback-link absolute bottom-[-48rem] right-0 z-[99] max-md:bottom-[-30rem]">
+        <a href="#" class="font-bold italic text-accent/25 after:ml-[5rem] after:inline-block after:content-['→']">Send feedback</a>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<style>
+  .feedback-swiper {
+    padding-bottom: 40rem;
+  }
+
+  /* Контейнер пагинации: id + класс даёт специфичность выше встроенных .swiper-pagination */
+  :global(#feedbackPagination.feedback-pagination) {
+    position: absolute;
+    bottom: -48rem;
+    left: 0;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+    padding: 0;
+    transform: none;
+    line-height: 0;
+    z-index: 10;
+  }
+
+  /* Буллет (неактивный): .swiper-pagination .swiper-pagination-bullet в Swiper имеет
+     специфичность 0,2,0 — наш селектор 0,3,0, этого достаточно без !important */
+  :global(#feedbackPagination .swiper-pagination-bullet) {
+    display: inline-block;
+    width: 32rem;
+    height: 6rem;
+    margin: 0 11rem;
+    padding: 0;
+    border: none;
+    border-radius: 50rem;
+    background-color: rgba(0, 69, 98, 0.2);
+    opacity: 1;
+    transition: background-color 0.3s ease;
+    font-size: 0;
+    line-height: 0;
+    transform: none;
+  }
+
+  /* Буллет (активный) — id + класс + класс активного = 0,4,0, перебивает всё */
+  :global(#feedbackPagination .swiper-pagination-bullet.swiper-pagination-bullet-active) {
+    background-color: #9B552E;
+  }
+
+  :global(.feedback-swiper .swiper-button-prev),
+  :global(.feedback-swiper .swiper-button-next) {
+    display: none;
+  }
+
+  @media (max-width: 992px) {
+    .feedback-swiper {
+      padding-bottom: 20rem;
+    }
+    :global(#feedbackPagination.feedback-pagination) {
+      bottom: 0rem;
+    }
+    :global(#feedbackPagination .swiper-pagination-bullet) {
+      width: 10rem;
+      height: 2.4rem;
+      margin: 0 4rem;
+    }
+  }
+</style>

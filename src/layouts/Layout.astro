@@ -1,0 +1,84 @@
+---
+// src/layouts/Layout.astro
+import "../styles/global.css";
+import { SEO } from "astro-seo";
+
+interface Props {
+  title?: string;
+  seoTitle?: string;
+  seoDescription?: string;
+  seoKeywords?: string[];
+  ogImage?: string;
+  noIndex?: boolean;
+}
+
+const {
+  seoTitle,
+  seoDescription = "University of Kyiv - modern educational institution providing high-quality higher education",
+  seoKeywords = ["university", "education", "Kyiv", "Ukraine", "international students", "higher education"],
+  ogImage = "/default-og-image.jpg",
+  noIndex = false,
+} = Astro.props;
+
+const keywordsString = seoKeywords.join(', ');
+const { title } = Astro.props;
+const pageTitle = title ?? "University of Kyiv";
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="generator" content={Astro.generator} />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="icon" href="/favicon.ico" />
+    <title>{pageTitle}</title>
+    
+    <SEO
+      title={seoTitle || pageTitle}
+      description={seoDescription}
+      noindex={noIndex}
+      
+      extend={{
+        meta: [
+          ...(seoKeywords.length > 0 ? [
+            { name: "keywords", content: keywordsString }
+          ] : []),
+        ],
+        link: [
+          { rel: "icon", href: "/favicon.ico" },
+          { rel: "apple-touch-icon", href: "/apple-touch-icon.png" },
+        ]
+      }}
+    />
+    
+    <link rel="sitemap" href="/sitemap-index.xml" />
+    
+    <!-- Slick Carousel -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick-theme.min.css" />
+    
+    <script>
+      const setHtmlFontSize = (width: number) => document.documentElement.style.fontSize = `${1 * window.innerWidth / width}px`
+      const updateHtmlFontSize = () => window.innerWidth >= 992 ? setHtmlFontSize(1440) : setHtmlFontSize(360)
+      updateHtmlFontSize();
+      window.addEventListener('resize', updateHtmlFontSize);
+    </script>
+  </head>
+  <body>
+    <slot />
+    
+    <!-- Scripts -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.min.js"></script>
+    <script src="https://unpkg.com/imask"></script>
+  </body>
+</html>
+
+<style>
+  html,
+  /* body {
+    font-size: 14rem;
+  } */
+</style>

@@ -1,0 +1,25 @@
+---
+// src/components/shared/SearchForm.astro
+---
+
+<div class="search-form max-md:hidden">
+  <div class="search-form__button flex items-center gap-[10rem]">
+    <div class="search-form__button-icon flex h-[17rem] w-[17rem] items-center justify-center rounded-full border-[1rem] border-white transition-all duration-500">
+      <svg width="10" height="10" viewBox="0 0 10 10" fill="none" xmlns="http://www.w3.org/2000/svg" class="h-[8rem] w-[8rem]">
+        <path d="M8.81549 7.3567L7.4638 6.01006C7.70956 5.52038 7.87341 4.94908 7.87341 4.37778C7.87341 2.45985 6.31691 0.90918 4.39178 0.90918C2.46665 0.90918 0.910156 2.45985 0.910156 4.37778C0.910156 6.29571 2.46665 7.84638 4.39178 7.84638C4.96522 7.84638 5.53867 7.68315 6.03019 7.43831L7.38188 8.78495C7.79148 9.19302 8.40589 9.19302 8.81549 8.78495C9.18413 8.37687 9.18413 7.76477 8.81549 7.3567ZM4.39178 7.03024C2.91721 7.03024 1.72936 5.84684 1.72936 4.37778C1.72936 2.90873 2.91721 1.72532 4.39178 1.72532C5.86635 1.72532 7.0542 2.90873 7.0542 4.37778C7.0542 5.84684 5.86635 7.03024 4.39178 7.03024Z" fill="white"/>
+      </svg>
+    </div>
+    <span class="text-[16rem] transition-all duration-500">
+      <form action="/" method="get">
+        <input 
+          type="text" 
+          name="s" 
+          id="search" 
+          value="" 
+          placeholder="Search Form" 
+          class="bg-transparent border-none text-[16rem] text-white placeholder:text-white"
+        />
+      </form>
+    </span>
+  </div>
+</div>

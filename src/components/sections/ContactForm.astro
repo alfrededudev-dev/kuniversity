@@ -1,0 +1,111 @@
+---
+// src/components/sections/ContactForm.astro
+---
+
+<section class="contact-form">
+  <div class="container">
+    <div class="contact-form__content relative max-md:pb-[270rem] before:content-[''] before:absolute before:top-[-18rem] before:left-[-11rem] before:z-[-1] before:block before:h-[74rem] before:w-[74rem] before:rounded-[1.08rem] before:border-[3.3rem] before:border-primary/5 max-md:before:hidden after:content-[''] after:absolute after:top-[-30rem] after:left-[-26rem] after:z-[-1] after:block after:h-[43rem] after:w-[43rem] after:rounded-[1.08rem] after:border-[3.3rem] after:border-primary/5 max-md:after:hidden">
+      
+      <div class="contact-form-block w-[815rem] max-md:w-full pb-[84rem] max-md:pb-0">
+        <div class="section-content mt-0 max-md:mt-0">
+          <h2 class="mb-[16rem] text-[38rem] font-bold uppercase leading-[44rem] max-md:mb-[10rem] max-md:text-center max-md:text-[18rem] max-md:leading-[21rem] max-md:mt-0">
+            Complete the form
+          </h2>
+          
+          <div class="section-content__description">
+            <p class="mb-0 text-justify">
+              Applying to university is a significant step in your life, opening up new horizons and opportunities for growth. This process can be exciting, but with the right approach and preparation, you can navigate it successfully. We are here to support you every step of the way on this exciting journey.
+            </p>
+          </div>
+
+          <form 
+            class="cms-form flex flex-col gap-[16rem]"
+            data-cms-form
+            data-form-slug="contact"
+            data-submit-url=""
+            data-success-message="Thank you! Your application has been submitted."
+            data-redirect-url=""
+            enctype="multipart/form-data"
+            novalidate
+          >
+            <!-- Name -->
+            <div class="form-group flex flex-col items-start mt-[16rem]">
+              <label for="name" class="font-bold pl-[12rem] mb-[5rem]">
+                Name<span class="sign text-accent">*</span>
+              </label>
+              <input 
+                id="name" 
+                name="name" 
+                type="text" 
+                placeholder="Name"
+                class="w-full h-[32rem] rounded-[3rem] border-[1.6rem] border-primary px-[13rem] font-serif text-[14rem] font-normal text-primary/60 placeholder:text-primary/50 placeholder:font-bold"
+                required
+              />
+            </div>
+
+            <!-- Double fields: Phone + Email -->
+            <div class="form-group form-group--double flex flex-col md:flex-row justify-between gap-[16rem] md:gap-0">
+              <div class="form-group flex flex-col items-start w-full md:w-[calc(50%-16rem)]">
+                <label for="phone" class="font-bold pl-[12rem] mb-[5rem]">
+                  WhatsApp number<span class="sign text-accent">*</span>
+                </label>
+                <input 
+                  id="phone" 
+                  name="phone" 
+                  type="text" 
+                  placeholder="WhatsApp number"
+                  class="w-full h-[32rem] rounded-[3rem] border-[1.6rem] border-primary px-[13rem] font-serif text-[14rem] font-normal text-primary/60 placeholder:text-primary/50 placeholder:font-bold"
+                  required
+                />
+              </div>
+              <div class="form-group flex flex-col items-start w-full md:w-[calc(50%-16rem)]">
+                <label for="email" class="font-bold pl-[12rem] mb-[5rem]">
+                  Your email<span class="sign text-accent">*</span>
+                </label>
+                <input 
+                  id="email" 
+                  name="email" 
+                  type="email" 
+                  placeholder="Your email"
+                  class="w-full h-[32rem] rounded-[3rem] border-[1.6rem] border-primary px-[13rem] font-serif text-[14rem] font-normal text-primary/60 placeholder:text-primary/50 placeholder:font-bold"
+                  required
+                />
+              </div>
+            </div>
+
+            <!-- Anti-spam -->
+            <input 
+              type="text" 
+              name="_gotcha" 
+              tabindex="-1" 
+              autocomplete="off" 
+              class="hidden" 
+              aria-hidden="true" 
+            />
+
+            <!-- Submit button -->
+            <div class="form-group form-group--button">
+              <button 
+                type="submit" 
+                class="h-[32rem] w-[152rem] rounded-[3rem] border-none bg-accent font-serif text-[14rem] font-bold text-white transition-colors duration-500 hover:bg-primary hover:cursor-pointer max-md:w-full"
+              >
+                Send
+              </button>
+            </div>
+          </form>
+
+          <div class="mt-[24rem] italic">
+            Applying to university is a significant step in your life, opening up new horizons and opportunities for growth. <span class="sign text-accent">*</span>
+          </div>
+        </div>
+      </div>
+
+      <img 
+        class="contact-form__image absolute bottom-0 right-[-20rem] h-[450rem] w-[428rem] object-cover max-md:right-[calc(50%-123.5rem)] max-md:h-[261rem] max-md:w-[247rem]" 
+        src="/contact-form.png" 
+        alt="Contact form"
+      />
+
+    </div>
+  </div>
+</section>
