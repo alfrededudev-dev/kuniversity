@@ -2,15 +2,34 @@
 // src/components/layout/HeaderMobile.astro
 ---
 
-<div class="header-mobile-navigation-window fixed top-[80rem] left-[-300rem] z-[999] h-[calc(100vh-80rem)] w-[296rem] overflow-y-scroll rounded-[2rem] bg-white/86 p-[10rem_0] backdrop-blur-[16rem] shadow-[0_2.2rem_22rem_0_rgba(0,0,0,0.06)] transition-all duration-400 ease" id="mobileNavigationWindow">
+<div
+  class="header-mobile-navigation-window fixed top-[80rem] left-[-300rem] z-[999] h-[calc(100vh-80rem)] w-[296rem] overflow-y-auto overscroll-contain rounded-[2rem] bg-white/95 p-[10rem_0] shadow-[0_2.2rem_22rem_0_rgba(0,0,0,0.06)] transition-all duration-400 ease"
+  id="mobileNavigationWindow"
+>
   <div class="header-mobile-navigation-window__search-form">
     <div class="mobile-search-form mx-[20rem] mb-[10rem] rounded-[2rem] border-[1rem] border-primary/25">
       <form action="/" method="get" class="flex items-center justify-between">
-        <input type="text" name="s" id="search" value="" placeholder="Search..." class="h-[24rem] w-[80%] border-none bg-transparent px-[8rem] text-[12rem] text-primary placeholder:text-primary/25" />
-        <button type="submit" class="flex h-[24rem] items-center border-none bg-transparent">
-          <svg xmlns="http://www.w3.org/2000/svg" width="17" height="17" viewBox="0 0 17 17" fill="none" class="h-[16rem] w-[16rem] opacity-25 transition-all duration-400">
-            <rect width="16.3636" height="16.3636" rx="8.18182" fill="#004562"/>
-            <path d="M11.9971 10.5383L10.6454 9.1917C10.8912 8.70202 11.055 8.13072 11.055 7.55942C11.055 5.64149 9.49855 4.09082 7.57342 4.09082C5.64829 4.09082 4.0918 5.64149 4.0918 7.55942C4.0918 9.47735 5.64829 11.028 7.57342 11.028C8.14687 11.028 8.72031 10.8648 9.21183 10.62L10.5635 11.9666C10.9731 12.3747 11.5875 12.3747 11.9971 11.9666C12.3658 11.5585 12.3658 10.9464 11.9971 10.5383ZM7.57342 10.2119C6.09885 10.2119 4.911 9.02848 4.911 7.55942C4.911 6.09037 6.09885 4.90696 7.57342 4.90696C9.04799 4.90696 10.2358 6.09037 10.2358 7.55942C10.2358 9.02848 9.04799 10.2119 7.57342 10.2119Z" fill="white"/>
+        <input
+          type="text"
+          name="s"
+          id="search"
+          value=""
+          placeholder="Search..."
+          class="h-[24rem] w-[80%] border-none bg-transparent px-[8rem] text-[12rem] text-primary placeholder:text-primary/25"
+        />
+        <button type="submit" class="flex h-[24rem] items-center border-none bg-transparent mr-[8rem]">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="17"
+            height="17"
+            viewBox="0 0 17 17"
+            fill="none"
+            class="h-[16rem] w-[16rem] opacity-25 transition-all duration-400"
+          >
+            <rect width="16.3636" height="16.3636" rx="8.18182" fill="#004562"></rect>
+            <path
+              d="M11.9971 10.5383L10.6454 9.1917C10.8912 8.70202 11.055 8.13072 11.055 7.55942C11.055 5.64149 9.49855 4.09082 7.57342 4.09082C5.64829 4.09082 4.0918 5.64149 4.0918 7.55942C4.0918 9.47735 5.64829 11.028 7.57342 11.028C8.14687 11.028 8.72031 10.8648 9.21183 10.62L10.5635 11.9666C10.9731 12.3747 11.5875 12.3747 11.9971 11.9666C12.3658 11.5585 12.3658 10.9464 11.9971 10.5383ZM7.57342 10.2119C6.09885 10.2119 4.911 9.02848 4.911 7.55942C4.911 6.09037 6.09885 4.90696 7.57342 4.90696C9.04799 4.90696 10.2358 6.09037 10.2358 7.55942C10.2358 9.02848 9.04799 10.2119 7.57342 10.2119Z"
+              fill="white"></path>
           </svg>
         </button>
       </form>
@@ -20,56 +39,175 @@
   <div class="header-mobile-navigation-window__navigation">
     <ul class="header-mobile-main-navigation">
       <li class="menu-item menu-item-has-children">
-        <a href="#" class="border-b border-primary/25 flex items-center justify-between text-[12rem] py-[12rem] mx-[20rem]">About Us</a>
-        <ul class="sub-menu invisible opacity-0 h-0 transition-all duration-400">
-          <li class="menu-item"><a href="/about-us/" class="flex items-center justify-between text-[12rem] py-[12rem] pl-[18rem] relative mx-[20rem] before:content-[''] before:w-[3rem] before:h-[3rem] before:block before:absolute before:top-[calc(50%-1.5rem)] before:bg-primary before:rounded-full before:left-[7rem]">About Us</a></li>
-          <li class="menu-item"><a href="#" class="flex items-center justify-between text-[12rem] py-[12rem] pl-[18rem] relative mx-[20rem] before:content-[''] before:w-[3rem] before:h-[3rem] before:block before:absolute before:top-[calc(50%-1.5rem)] before:bg-primary before:rounded-full before:left-[7rem]">About Sub 1</a></li>
-          <li class="menu-item"><a href="#" class="flex items-center justify-between text-[12rem] py-[12rem] pl-[18rem] relative mx-[20rem] before:content-[''] before:w-[3rem] before:h-[3rem] before:block before:absolute before:top-[calc(50%-1.5rem)] before:bg-primary before:rounded-full before:left-[7rem]">About Sub 2</a></li>
+        <a
+          href="#"
+          class="border-b border-primary/25 flex items-center justify-between text-[12rem] py-[12rem] mx-[20rem]">About Us</a
+        >
+        <ul class="sub-menu invisible opacity-0 max-h-0 overflow-hidden transition-all duration-400">
+          <li class="menu-item">
+            <a
+              href="/about-us/"
+              class="flex items-center justify-between text-[12rem] py-[12rem] pl-[18rem] relative mx-[20rem] before:content-[''] before:w-[3rem] before:h-[3rem] before:block before:absolute before:top-[calc(50%-1.5rem)] before:bg-primary before:rounded-full before:left-[7rem]"
+              >About Us</a
+            >
+          </li>
+          <li class="menu-item">
+            <a
+              href="#"
+              class="flex items-center justify-between text-[12rem] py-[12rem] pl-[18rem] relative mx-[20rem] before:content-[''] before:w-[3rem] before:h-[3rem] before:block before:absolute before:top-[calc(50%-1.5rem)] before:bg-primary before:rounded-full before:left-[7rem]"
+              >About Sub 1</a
+            >
+          </li>
+          <li class="menu-item">
+            <a
+              href="#"
+              class="flex items-center justify-between text-[12rem] py-[12rem] pl-[18rem] relative mx-[20rem] before:content-[''] before:w-[3rem] before:h-[3rem] before:block before:absolute before:top-[calc(50%-1.5rem)] before:bg-primary before:rounded-full before:left-[7rem]"
+              >About Sub 2</a
+            >
+          </li>
           <li class="menu-item menu-item-has-children">
-            <a href="#" class="flex items-center justify-between text-[12rem] py-[12rem] pl-[18rem] relative mx-[20rem] before:content-[''] before:w-[3rem] before:h-[3rem] before:block before:absolute before:top-[calc(50%-1.5rem)] before:bg-primary before:rounded-full before:left-[7rem]">About Sub 3</a>
-            <ul class="sub-menu relative mx-0 bg-primary/7 before:content-[''] before:inline-block before:border-l-[8rem] before:border-r-[8rem] before:border-b-[5rem] before:border-l-transparent before:border-r-transparent before:border-b-primary/7 before:absolute before:top-[-5rem] before:left-[46rem]">
-              <li class="menu-item"><a href="#" class="flex items-center justify-between text-[12rem] py-[12rem] pl-[18rem] relative ml-[36rem] mx-[20rem] before:content-[''] before:w-[3rem] before:h-[3rem] before:block before:absolute before:top-[calc(50%-1.5rem)] before:bg-primary before:rounded-full before:left-[7rem]">About Sub Sub 1</a></li>
-              <li class="menu-item"><a href="#" class="flex items-center justify-between text-[12rem] py-[12rem] pl-[18rem] relative ml-[36rem] mx-[20rem] before:content-[''] before:w-[3rem] before:h-[3rem] before:block before:absolute before:top-[calc(50%-1.5rem)] before:bg-primary before:rounded-full before:left-[7rem]">About Sub Sub 2</a></li>
-              <li class="menu-item"><a href="#" class="flex items-center justify-between text-[12rem] py-[12rem] pl-[18rem] relative ml-[36rem] mx-[20rem] before:content-[''] before:w-[3rem] before:h-[3rem] before:block before:absolute before:top-[calc(50%-1.5rem)] before:bg-primary before:rounded-full before:left-[7rem]">About Sub Sub 3</a></li>
-              <li class="menu-item"><a href="#" class="flex items-center justify-between text-[12rem] py-[12rem] pl-[18rem] relative ml-[36rem] mx-[20rem] before:content-[''] before:w-[3rem] before:h-[3rem] before:block before:absolute before:top-[calc(50%-1.5rem)] before:bg-primary before:rounded-full before:left-[7rem]">About Sub Sub 4</a></li>
+            <a
+              href="#"
+              class="flex items-center justify-between text-[12rem] py-[12rem] pl-[18rem] relative mx-[20rem] before:content-[''] before:w-[3rem] before:h-[3rem] before:block before:absolute before:top-[calc(50%-1.5rem)] before:bg-primary before:rounded-full before:left-[7rem]"
+              >About Sub 3</a
+            >
+            <ul
+              class="sub-menu relative mx-0 bg-primary/7 before:content-[''] before:inline-block before:border-l-[8rem] before:border-r-[8rem] before:border-b-[5rem] before:border-l-transparent before:border-r-transparent before:border-b-primary/7 before:absolute before:top-[-5rem] before:left-[46rem] invisible opacity-0 max-h-0 overflow-hidden transition-all duration-400"
+            >
+              <li class="menu-item">
+                <a
+                  href="#"
+                  class="flex items-center justify-between text-[12rem] py-[12rem] pl-[18rem] relative ml-[36rem] mx-[20rem] before:content-[''] before:w-[3rem] before:h-[3rem] before:block before:absolute before:top-[calc(50%-1.5rem)] before:bg-primary before:rounded-full before:left-[7rem]"
+                  >About Sub Sub 1</a
+                >
+              </li>
+              <li class="menu-item">
+                <a
+                  href="#"
+                  class="flex items-center justify-between text-[12rem] py-[12rem] pl-[18rem] relative ml-[36rem] mx-[20rem] before:content-[''] before:w-[3rem] before:h-[3rem] before:block before:absolute before:top-[calc(50%-1.5rem)] before:bg-primary before:rounded-full before:left-[7rem]"
+                  >About Sub Sub 2</a
+                >
+              </li>
+              <li class="menu-item">
+                <a
+                  href="#"
+                  class="flex items-center justify-between text-[12rem] py-[12rem] pl-[18rem] relative ml-[36rem] mx-[20rem] before:content-[''] before:w-[3rem] before:h-[3rem] before:block before:absolute before:top-[calc(50%-1.5rem)] before:bg-primary before:rounded-full before:left-[7rem]"
+                  >About Sub Sub 3</a
+                >
+              </li>
+              <li class="menu-item">
+                <a
+                  href="#"
+                  class="flex items-center justify-between text-[12rem] py-[12rem] pl-[18rem] relative ml-[36rem] mx-[20rem] before:content-[''] before:w-[3rem] before:h-[3rem] before:block before:absolute before:top-[calc(50%-1.5rem)] before:bg-primary before:rounded-full before:left-[7rem]"
+                  >About Sub Sub 4</a
+                >
+              </li>
             </ul>
           </li>
-          <li class="menu-item"><a href="#" class="flex items-center justify-between text-[12rem] py-[12rem] pl-[18rem] relative mx-[20rem] before:content-[''] before:w-[3rem] before:h-[3rem] before:block before:absolute before:top-[calc(50%-1.5rem)] before:bg-primary before:rounded-full before:left-[7rem]">About Sub 4</a></li>
-          <li class="menu-item"><a href="#" class="flex items-center justify-between text-[12rem] py-[12rem] pl-[18rem] relative mx-[20rem] before:content-[''] before:w-[3rem] before:h-[3rem] before:block before:absolute before:top-[calc(50%-1.5rem)] before:bg-primary before:rounded-full before:left-[7rem]">About Sub 5</a></li>
+          <li class="menu-item">
+            <a
+              href="#"
+              class="flex items-center justify-between text-[12rem] py-[12rem] pl-[18rem] relative mx-[20rem] before:content-[''] before:w-[3rem] before:h-[3rem] before:block before:absolute before:top-[calc(50%-1.5rem)] before:bg-primary before:rounded-full before:left-[7rem]"
+              >About Sub 4</a
+            >
+          </li>
+          <li class="menu-item">
+            <a
+              href="#"
+              class="flex items-center justify-between text-[12rem] py-[12rem] pl-[18rem] relative mx-[20rem] before:content-[''] before:w-[3rem] before:h-[3rem] before:block before:absolute before:top-[calc(50%-1.5rem)] before:bg-primary before:rounded-full before:left-[7rem]"
+              >About Sub 5</a
+            >
+          </li>
         </ul>
       </li>
-      <li class="menu-item"><a href="#" class="border-b border-primary/25 flex items-center justify-between text-[12rem] py-[12rem] mx-[20rem]">Schools</a></li>
-      <li class="menu-item"><a href="#" class="border-b border-primary/25 flex items-center justify-between text-[12rem] py-[12rem] mx-[20rem]">Admissions</a></li>
-      <li class="menu-item"><a href="#" class="border-b border-primary/25 flex items-center justify-between text-[12rem] py-[12rem] mx-[20rem]">For students</a></li>
-      <li class="menu-item"><a href="#" class="border-b border-primary/25 flex items-center justify-between text-[12rem] py-[12rem] mx-[20rem]">Educational system</a></li>
-      <li class="menu-item"><a href="#" class="border-b border-primary/25 flex items-center justify-between text-[12rem] py-[12rem] mx-[20rem]">FAQ</a></li>
+      <li class="menu-item">
+        <a href="#" class="border-b border-primary/25 flex items-center justify-between text-[12rem] py-[12rem] mx-[20rem]"
+          >Schools</a
+        >
+      </li>
+      <li class="menu-item">
+        <a href="#" class="border-b border-primary/25 flex items-center justify-between text-[12rem] py-[12rem] mx-[20rem]"
+          >Admissions</a
+        >
+      </li>
+      <li class="menu-item">
+        <a href="#" class="border-b border-primary/25 flex items-center justify-between text-[12rem] py-[12rem] mx-[20rem]"
+          >For students</a
+        >
+      </li>
+      <li class="menu-item">
+        <a href="#" class="border-b border-primary/25 flex items-center justify-between text-[12rem] py-[12rem] mx-[20rem]"
+          >Educational system</a
+        >
+      </li>
+      <li class="menu-item">
+        <a href="#" class="border-b border-primary/25 flex items-center justify-between text-[12rem] py-[12rem] mx-[20rem]">FAQ</a>
+      </li>
     </ul>
   </div>
 </div>
 
 <style>
-.header-mobile-navigation-window.active-mobile-navigation-window {
-  left: 0;
-}
+  .header-mobile-navigation-window.active-mobile-navigation-window {
+    left: 0;
+  }
 
-.header-mobile-main-navigation .menu-item-has-children > a::after {
-  content: "";
-  display: inline-block;
-  width: 8rem;
-  height: 4rem;
-  background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 8 4" fill="none"><path opacity="0.25" d="M0.813736 0.15296C0.907724 0.0550196 1.03518 0 1.16808 0C1.30098 0 1.42844 0.0550196 1.52243 0.15296L4.00335 2.73897L6.48428 0.15296C6.5788 0.0577953 6.70541 0.00513768 6.83682 0.00632787C6.96823 0.00751829 7.09394 0.0624611 7.18686 0.159323C7.27979 0.256186 7.3325 0.387217 7.33364 0.524196C7.33478 0.661174 7.28426 0.79314 7.19297 0.891671L4.3577 3.84704C4.26371 3.94498 4.13625 4 4.00335 4C3.87045 4 3.74299 3.94498 3.64901 3.84704L0.813736 0.891671C0.719776 0.793701 0.666992 0.660844 0.666992 0.522315C0.666992 0.383786 0.719776 0.250929 0.813736 0.15296Z" fill="%23004562"/></svg>') no-repeat center;
-  background-size: contain;
-}
+  .header-mobile-main-navigation .menu-item-has-children > a::after {
+    content: '';
+    display: inline-block;
+    width: 8rem;
+    height: 4rem;
+    background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 8 4" fill="none"><path opacity="0.25" d="M0.813736 0.15296C0.907724 0.0550196 1.03518 0 1.16808 0C1.30098 0 1.42844 0.0550196 1.52243 0.15296L4.00335 2.73897L6.48428 0.15296C6.5788 0.0577953 6.70541 0.00513768 6.83682 0.00632787C6.96823 0.00751829 7.09394 0.0624611 7.18686 0.159323C7.27979 0.256186 7.3325 0.387217 7.33364 0.524196C7.33478 0.661174 7.28426 0.79314 7.19297 0.891671L4.3577 3.84704C4.26371 3.94498 4.13625 4 4.00335 4C3.87045 4 3.74299 3.94498 3.64901 3.84704L0.813736 0.891671C0.719776 0.793701 0.666992 0.660844 0.666992 0.522315C0.666992 0.383786 0.719776 0.250929 0.813736 0.15296Z" fill="%23004562"/></svg>')
+      no-repeat center;
+    background-size: contain;
+    transition: transform 0.3s ease;
+  }
 
-.active-menu-item > a {
-  color: #9B552E;
-}
-.active-menu-item > a::after {
-  background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="8" height="4" viewBox="0 0 8 4" fill="none"><path d="M0.813736 3.84704C0.907724 3.94498 1.03518 4 1.16808 4C1.30098 4 1.42844 3.94498 1.52243 3.84704L4.00335 1.26103L6.48428 3.84704C6.5788 3.9422 6.70541 3.99486 6.83682 3.99367C6.96823 3.99248 7.09394 3.93754 7.18686 3.84068C7.27979 3.74381 7.3325 3.61278 7.33364 3.4758C7.33478 3.33883 7.28426 3.20686 7.19297 3.10833L4.3577 0.152959C4.26371 0.0550196 4.13625 0 4.00335 0C3.87045 0 3.74299 0.0550196 3.64901 0.152959L0.813736 3.10833C0.719776 3.2063 0.666992 3.33916 0.666992 3.47768C0.666992 3.61621 0.719776 3.74907 0.813736 3.84704Z" fill="%239B552E"/></svg>') no-repeat center !important;
-}
-.active-menu-item > .sub-menu {
-  visibility: visible !important;
-  opacity: 1 !important;
-  height: auto !important;
-}
+  .active-menu-item > a {
+    color: #9b552e;
+  }
+
+  .active-menu-item > a::after {
+    background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="8" height="4" viewBox="0 0 8 4" fill="none"><path d="M0.813736 3.84704C0.907724 3.94498 1.03518 4 1.16808 4C1.30098 4 1.42844 3.94498 1.52243 3.84704L4.00335 1.26103L6.48428 3.84704C6.5788 3.9422 6.70541 3.99486 6.83682 3.99367C6.96823 3.99248 7.09394 3.93754 7.18686 3.84068C7.27979 3.74381 7.3325 3.61278 7.33364 3.4758C7.33478 3.33883 7.28426 3.20686 7.19297 3.10833L4.3577 0.152959C4.26371 0.0550196 4.13625 0 4.00335 0C3.87045 0 3.74299 0.0550196 3.64901 0.152959L0.813736 3.10833C0.719776 3.2063 0.666992 3.33916 0.666992 3.47768C0.666992 3.61621 0.719776 3.74907 0.813736 3.84704Z" fill="%239B552E"/></svg>')
+      no-repeat center !important;
+  }
+
+  /* Раскрываем только подменю того уровня, у которого активен родитель */
+  .header-mobile-main-navigation > .menu-item-has-children.active-menu-item > .sub-menu,
+  .sub-menu .menu-item-has-children.active-menu-item > .sub-menu {
+    visibility: visible !important;
+    opacity: 1 !important;
+    max-height: 2000px !important;
+  }
 </style>
+
+<script>
+  const win = document.getElementById('mobileNavigationWindow');
+
+  const nav = document.querySelector('.header-mobile-main-navigation');
+  nav?.addEventListener('click', (e) => {
+    const link = (e.target as HTMLElement).closest('a');
+    if (!link) return;
+
+    const li = link.parentElement;
+    if (!li || !li.classList.contains('menu-item-has-children')) return;
+
+    if (link.getAttribute('href') === '#') e.preventDefault();
+    li.classList.toggle('active-menu-item');
+  });
+
+  // Открытие/закрытие меню по бургеру.
+  // Замените селектор [data-mobile-burger] на реальный класс/атрибут вашей кнопки.
+  const burger = document.querySelector('[data-mobile-burger]');
+  burger?.addEventListener('click', () => {
+    if (!win) return;
+    const isOpen = win.classList.contains('active-mobile-navigation-window');
+    if (isOpen) {
+      win.classList.remove('active-mobile-navigation-window');
+      document.body.style.overflow = '';
+    } else {
+      win.classList.add('active-mobile-navigation-window');
+      document.body.style.overflow = 'hidden';
+    }
+  });
+</script>
